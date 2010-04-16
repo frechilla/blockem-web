@@ -54,7 +54,10 @@
       </td>
       <td>
       <p align="left"><h2>What is blockem?</h2></p>
-      <p>Blockem is an <a href="doc/COPYING">open source</a> clone of the board strategy game <a href="http://www.blokus.com">blokus</a> in its <a href="http://en.wikipedia.org/wiki/Blokus#Blokus_Duo.2FTravel_Blokus">duo</a> version. It is available for Unix-like and Windows and written in C++/<a href="http://www.gtkmm.org/">GTKmm</a> (the C++ wrapper of <a href="http://www.gtk.org/">GTK+</a>)</p>
+      <p>Blockem is an <a href="doc/COPYING">open source</a> clone of the board strategy game <a href="http://www.blokus.com">blokus</a> in its <a href="http://en.wikipedia.org/wiki/Blokus#Blokus_Duo.2FTravel_Blokus">duo</a> version. It is available for Unix-like systems and Windows and it is written in C++/<a href="http://www.gtkmm.org/">GTKmm</a> (the C++ wrapper of <a href="http://www.gtk.org/">GTK+</a>)</p>
+      <p>Blockem is the result of "a bit of" a obsession I have since I first discovered blokus back in 2008. Back in those days an idea crossed over our (my and my workmates') heads, creating a smart blokus player to be used in one of the several 3 blokus games we used to play whenever the 4th player was missing.</p>
+      <p>Later on, once the project was started, we realised a smart blokus player in a 4 player game is, firstly, much more complicated to develop, and secondly, much harder to proof to be smart, due to the nature of the 4-players blokus game. 
+      If you ever played a blokus game I am sure you have noticed 4-players blokus is not a fully strategical game but more of a psychological one, since you can get ganged up by the other 3 players, isn't it James?</p>
       <p><br/></p>      
       <p><h2>Rules:</h2></p>
       <p>Basically you've got 21 pieces to put down on the board (which are a set of all the possible free <a href="http://en.wikipedia.org/wiki/Polyomino">polyominoes</a> from 1 to 5 squares), while preventing your opponent from doing the same. There are 3 basic rules to put down pieces on the board:
@@ -67,7 +70,7 @@
       <p><br/></p>
       <p><h2>Download:</h2></p>
       <p>
-      This is a list of all the different releases of blockem made so far. Latest is <b>0.1.4</b>, which was released on the <b>9th of April 2010</b>. 
+      This is a list of all the different releases of blockem made so far. Latest is <b>0.1.5</b>, which was released on the <b>16th of April 2010</b>. 
       </p>
       <p>
       You might also want to browse to <a href="http://sourceforge.net/projects/blockem/files/">sourceforge</a> to have a look at all the available files.
@@ -79,9 +82,26 @@
         <th>Platform</th>
         <th>Type</th>
       </tr>
+
+      <tr>
+        <td rowspan="3" align="center" valign="top">0.1.5</td>
+        <td><a href="http://sourceforge.net/projects/blockem/files/0.1.5/blockem-0.1.5.tar.gz/download">blockem-0.1.5.tar.gz</a></td>
+        <td align="center"><img alt="linux" src="images/linux.png" border="0"></td>
+        <td>sources</td>
+      </tr>
+      <tr>
+        <td><a href="http://sourceforge.net/projects/blockem/files/0.1.5/blockem-0.1.5-win32-bin.zip/download">blockem-0.1.5-win32-bin.zip</a></td>
+        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+        <td>zipped binary</td>
+      </tr>
+      <tr>
+        <td><a href="doc/CHANGELOG">CHANGELOG</a></td>
+        <td align="center">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>      
       
       <tr>
-        <td rowspan="3" align="center" valign="top">0.1.4</td>
+        <td rowspan="2" align="center" valign="top">0.1.4</td>
         <td><a href="http://sourceforge.net/projects/blockem/files/0.1.4/blockem-0.1.4.tar.gz/download">blockem-0.1.4.tar.gz</a></td>
         <td align="center"><img alt="linux" src="images/linux.png" border="0"></td>
         <td>sources</td>
@@ -90,11 +110,6 @@
         <td><a href="http://sourceforge.net/projects/blockem/files/0.1.4/blockem-0.1.4-win32-bin.zip/download">blockem-0.1.4-win32-bin.zip</a></td>
         <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
         <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="doc/CHANGELOG">CHANGELOG</a></td>
-        <td align="center">&nbsp;</td>
-        <td>&nbsp;</td>
       </tr>
       
       <tr>
@@ -142,6 +157,14 @@
       </table>
       </p>
       <p><br/></p>
+      <p><h2>Artificial Intelligence:</h2></p>
+      <p></p>
+      <p>Artificial intelligence is the main reason why this project was started in the first place. The aim at the very beginning was creating a smart blokus player to be used in one of the several 3-player blokus games we used to play whenever a player was missing.</p>
+ 		<p>Later on, once the project was started, we realised a smart blokus player in a 4 player game is, firstly, much more complicated to develop, and secondly, much harder to proof to be smart, due to the nature of the 4-players blokus game. 
+      If you ever played a blokus game I am sure you have noticed 4-players blokus is not a fully strategical game but more of a psychological one, since you can get ganged up by the other 3 players. However, blokus duo is pure strategical, you are responsible for your moves and you have to play against only one opponent. This is the main reason why the project changed at the early stages to be a blokus clone for the 1vs1 game (duo).</p>
+      <p>Of course, this doesn't mean I don't want the project to be extended to cover the 4-player game too (in fact, I would love it, since, I already said, it was the reason why this whole thing was started in the first place)</p>
+ 		<p>For whoever is interested in this part of blockem, I have written a document explaining the main parts of the AI, and how you can extend it if you are interested. It is contained in the source package in the doc/ directory, or in HTML format <a href="doc/heuristics.html">here</a>. Happy reading!</p>
+      <p><br/></p>
       <p><h2>HOWTO compile blockem sources:</h2></p>
       <p>
       Blockem sources have been compiled in both Linux and Windows, however it should compile in every platform where <a href="http://www.gtkmm.org/">GTKmm</a> has been ported.
@@ -166,7 +189,7 @@
       </ol>
       </p>
       <p><h3>Windows:</h3></p>
-      <p>There is a ready-to-run precompiled binary in the release <a href="http://sourceforge.net/projects/blockem/files/">list</a>. If you still want to compile the sources in this platform have a look at this <a href="doc/HOWTO_WINDOWS">HOWTO</a> I wrote when I compiled it for the 1st time.
+      <p>There is a ready-to-run precompiled binary in the release <a href="http://sourceforge.net/projects/blockem/files/">list</a>. If you still want to compile the sources in this platform have a look at this <a href="doc/howtowindows.html">HOWTO</a> I wrote when I compiled it for the 1st time.
       </p>
       </td>
     </tr>   
@@ -179,7 +202,7 @@
       <td align="left" width="50%">
         <p>
         <small>
-          Copyright (c) 2009-<script type="text/javascript">var d = new Date();document.write(d.getFullYear());</script>. <a href="http://www.sourceforge.net/sendmessage.php?touser=743915">Faustino Frechilla</a><br>Last modified: 14th April 2010
+          Copyright (c) 2009-<script type="text/javascript">var d = new Date();document.write(d.getFullYear());</script>. <a href="http://www.sourceforge.net/sendmessage.php?touser=743915">Faustino Frechilla</a><br>Last modified: 16th April 2010
         </small> 
         </p>
       </td>
