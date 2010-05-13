@@ -46,9 +46,11 @@
       <td valign="top" width="25%">
       <br/>
       <p align="center"><img alt="blockem game" src="../images/screenshot.jpg" border="0"></p>
-      <p align="center"><font size="+1"><a href="http://sourceforge.net/projects/blockem/files/">Download</a></font> blockem at sourceforge</p>
+      <p align="center">Blockem is <a href="http://www.fsf.org/">free software</a> released under GNU GPL v3</p>
+      <p></p>
       <br/>
-      <p align="center">...Or have a look at the <a href="http://sourceforge.net/project/screenshots.php?group_id=302382">screenshots</a></p>
+      <p align="center"><font size="+1"><a href="http://blockem.sourceforge.net/index.html#download">Download</a></font> blockem...</p>
+      <p align="center">... or have a look at the <a href="http://sourceforge.net/project/screenshots.php?group_id=302382">screenshots</a></p>
       <p><br/></p>
       </td>
       <td>
@@ -71,7 +73,7 @@
       </p>
 
 
-<p>As you could have guessed, Blockem AI is based on the MiniMAx algorithm with 
+<p>As you could have guessed, Blockem AI is based on the MiniMax algorithm with 
 alpha-beta prunning, to reduce the number of nodes in the search tree ensuring 
 the same result as it would be got with Minimax.</p>
 
@@ -80,10 +82,10 @@ which gives a numeric value to a specific configuration of the game. In blockem
 the configuration of the game is defined by the board, the moving player and the
 opponent, so the C++ interface of the evaluation function was decided to be:</p>
 <code>
-int32_t EvalFunction(
-             const Board  &a_board,
-             const Player &a_playerMe,
-             const Player &a_playerOpponent);
+int32_t EvalFunction(<br/>
+&nbsp;&nbsp;const Board  &a_board,<br/>
+&nbsp;&nbsp;const Player &a_playerMe,<br/>
+&nbsp;&nbsp;const Player &a_playerOpponent);<br/>
 </code>
 <p>
 Inside a class called Heuristic (in heuristic.h) there's a typedef which 
@@ -91,86 +93,204 @@ defines exactly this interface:</p>
 <code>class Heuristic<br/>
 {<br/>
 <br/>
-    /* ... */<br/>
-    typedef int32_t (*EvalFunction_t)(const Board &, const Player &, const Player &);<br/>
-    /* ... */<br/>
+&nbsp;&nbsp;/* ... */<br/>
+&nbsp;&nbsp;typedef int32_t (*EvalFunction_t)(const Board &, const Player &, const Player &);<br/>
+&nbsp;&nbsp;/* ... */<br/>
 <br/>
-}</code>
+}<br/>
+</code>
 
-<p>So modyfing the way blockem calculates the next computer move is pretty easy:</p>
+<p>You can easily write a new heuristic and make it available in the blockem GUI. 
+The following explanation applies to blockem version 0.2.0 or higher, where
+the process of adding new heuristics has been improved and simplified.</p>
 <ol>
 <li><p>Implement a function that suits the 'EvalFunction' Interface. A very 
     obvious one (though too simple) might be based on the number of squares
     each player managed to allocate on the board:</p>
  <code>
-    int32_t SimpleEvalFunction(<br/>
-            &nbsp;&nbsp;const Board  &a_board,<br/>
-            &nbsp;&nbsp;const Player &a_playerMe,<br/>
-            &nbsp;&nbsp;const Player &a_playerOpponent)<br/>
-    &nbsp;&nbsp;{<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;int32_t squaresMe = 0;<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;int32_t squaresOpponent = 0;<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;int32_t rv = 0;<br/>
+&nbsp;&nbsp;int32_t SimpleEvalFunction(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;const Board  &a_board,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;const Player &a_playerMe,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;const Player &a_playerOpponent)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;int32_t squaresMe = 0;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;int32_t squaresOpponent = 0;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;int32_t rv = 0;<br/>
    <br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;for (uint8_t rowCount = 0; rowCount < a_board.GetNRows() ; rowCount++)<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (uint8_t columnCount = 0; <br/>
-                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columnCount <  a_board.GetNColumns(); <br/>
-                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columnCount++)<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (a_board.IsPlayerInCoord(rowCount, columnCount, a_playerMe))<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;squaresMe++;<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-                else if (a_board.IsPlayerInCoord(rowCount, columnCount, a_playerOpponent))<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;squaresOpponent++;<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;for (uint8_t rowCount = 0; rowCount < a_board.GetNRows() ; rowCount++)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (uint8_t columnCount = 0; <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columnCount <  a_board.GetNColumns(); <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columnCount++)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (a_board.IsPlayerInCoord(rowCount, columnCount, a_playerMe))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;squaresMe++;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if (a_board.IsPlayerInCoord(rowCount, columnCount, a_playerOpponent))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;squaresOpponent++;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
    <br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;rv += squaresMe*4;<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;rv -= squaresOpponent*4;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;rv += squaresMe;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;rv -= squaresOpponent;<br/>
    <br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;return rv;<br/>
-    &nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;return rv;<br/>
+&nbsp;&nbsp;}<br/>
 </code>
 <p>
-    There are a few functions defined in rules.h that might help you out to 
-    write a powerful evaluation function (things like IsThisANucleationPoint, 
-    and so on...)</p>
+    If we take the former heuristic as the base one, we can slightly improve 
+    its performance taking into account also the nucleation points. The 
+    following code is the heuristic called "Simple" in the configuration
+    dialog. It assigns twice as much of importance to create a new nucleation
+    point than removing one from the opponent. You could easily adapt this
+    heuristic to something that is only focused on stopping the opponent, 
+    or vice-versa</p>
+    
+ <code>
+&nbsp;&nbsp;int32_t SimpleEvalFunction(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;const Board  &a_board,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;const Player &a_playerMe,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;const Player &a_playerOpponent)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;int32_t squaresMe = 0;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;int32_t squaresOpponent = 0;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;int32_t rv = 0;<br/>
+   <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;for (uint8_t rowCount = 0; rowCount < a_board.GetNRows() ; rowCount++)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (uint8_t columnCount = 0; <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columnCount <  a_board.GetNColumns(); <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columnCount++)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (a_board.IsPlayerInCoord(rowCount, columnCount, a_playerMe))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;squaresMe++;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if (a_board.IsPlayerInCoord(rowCount, columnCount, a_playerOpponent))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;squaresOpponent++;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+   <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;rv += squaresMe*4;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;rv += a_playerMe.NumberOfNucleationPoints()*2;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;rv -= squaresOpponent*4;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;rv -= a_playerOpponent.NumberOfNucleationPoints();<br/>
+   <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;return rv;<br/>
+&nbsp;&nbsp;}<br/>
+</code>
+<p> All the available heuristics are added to an array defined in the Heuristic
+    class called m_heuristicData. This array is defined in heuristic.h as:Have a look at heuristic.cpp and heuristic.h to see more examples of 
+    already implemented heuristics. There are a few functions defined in 
+    rules.h that might help you out to write a powerful evaluation function 
+    (things like IsThisANucleationPoint, and so on...)</p>
  </li>
-<li><p>Create a function pointer, and assign it to your brand new evaluation 
-    function:</p>
+<li><p>All the available heuristics are added to an array defined in the Heuristic
+    class called m_heuristicData. This array is defined in heuristic.h as:</p>
 <code>
-    #include "heuristic.h"
-    /* ... */
-    Heuristic::EvalFunction_t pEvalFunction = NULL;
-    pEvalFunction = SimpleEvalFunction;
+&nbsp;&nbsp;/// types of heuristic<br/>
+&nbsp;&nbsp;typedef enum<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_heuristicStartCount = 0, // this element must be always 0 and must be at the start<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_heuristicNKWeighted = e_heuristicStartCount,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_heuristicSimple,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_heuristicRandom,<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_heuristicCount, // stores the amount of heuristics. Must be always at the end<br/>
+&nbsp;&nbsp;} eHeuristicType_t;<br/>
+<br/>
+&nbsp;&nbsp;/// heuristic data to be used in the heuristics config array<br/>
+&nbsp;&nbsp;typedef struct<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;eHeuristicType_t m_type;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;EvalFunction_t m_evalFunction;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;std::string m_name;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;std::string m_description;<br/>
+&nbsp;&nbsp;} sHeuristicData_t;<br/>
+<br/>
+&nbsp;&nbsp;static const sHeuristicData_t m_heuristicData[e_heuristicCount];<br/>
+</code>
+<p>At the top of heuristic.cpp the list of available heuristic is instantiated:</p>
+<code>
+&nbsp;&nbsp;// instantiate the const heuristic data array. Heuristics must be defined here<br/>
+&nbsp;&nbsp;// in the same order they are described in Heuristic::eHeuristicType_t in heuristic.h<br/>
+&nbsp;&nbsp;const Heuristic::sHeuristicData_t Heuristic::m_heuristicData[e_heuristicCount] =<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{e_heuristicNKWeighted,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Heuristic::CalculateNKWeighted,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;std::string("NK weighted"),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;std::string("Nucleation points are weighted. The more in the middle in the board a NK point is, the more important it is")<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{e_heuristicSimple,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Heuristic::CalculateSimple,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;std::string("Simple"),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;std::string("Takes into account only the amount of squares of the deployed pieces")<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{e_heuristicRandom,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Heuristic::CalculateRandom,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;std::string("Random"),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;std::string("Random heuristic. Evaluation function returns a random value so any heuristic can be checked against it")<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;};<br/>
+</code>
+<p>    To add a brand new Heuristic in a function called, for example, 
+    "MyCustomisedHeuristic", first of all you must add an entry in the 
+    eHeuristicType_t enum in heuristic.h</p>
+<code>
+&nbsp;&nbsp;/// types of heuristic<br/>
+&nbsp;&nbsp;typedef enum<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_heuristicStartCount = 0, // this element must be always 0 and must be at the start<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_heuristicNKWeighted = e_heuristicStartCount,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_heuristicSimple,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_heuristicRandom,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_heuristicMyCustomisedHeuristic, // <-- Your brand new heuristic<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_heuristicCount, // stores the amount of heuristics. Must be always at the end<br/>
+&nbsp;&nbsp;} eHeuristicType_t;<br/>
+</code>
+<p>And then add it to the m_heuristicData array in heuristic.cpp:</p>
+<code>
+&nbsp;&nbsp;// instantiate the const heuristic data array. Heuristics must be defined here<br/>
+&nbsp;&nbsp;// in the same order they are described in Heuristic::eHeuristicType_t in heuristic.h<br/>
+&nbsp;&nbsp;const Heuristic::sHeuristicData_t Heuristic::m_heuristicData[e_heuristicCount] =<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{e_heuristicNKWeighted,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Heuristic::CalculateNKWeighted,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;std::string("NK weighted"),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;std::string("Nucleation points are weighted. The more in the middle in the board a NK point is, the more important it is")<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{e_heuristicSimple,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Heuristic::CalculateSimple,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;std::string("Simple"),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;std::string("Takes into account only the amount of squares of the deployed pieces")<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{e_heuristicRandom,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Heuristic::CalculateRandom,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;std::string("Random"),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;std::string("Random heuristic. Evaluation function returns a random value so any heuristic can be checked against it")<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{e_heuristicMyCustomisedHeuristic,      // as defined in eHeuristicType_t in heuristic.h<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;MyCustomisedHeuristic,                 // pointer to the heuristic function you wrote<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;std::string("MyCustomised"),           // Name of the heuristic. It'll be used in the GUI<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;std::string("This is my brand new...") // Description of your heuristic. It'll also be used in the GUI<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;};<br/>
 </code>
 </li>
 <li>
-<p>Now you can test your new heuristic and try to beat yourself playing blokus
-    graphically,
-    Use that function pointer in the call to <code>Game1v1::MinMax</code> which Blockem uses
-    to calculate the next move. The Game1v1 Minmax framework will call your 
-    customised function to evaluate each tested configuration. To do so, open 
-    up the file <code>gui_main_window_worker_thread.cpp</code> and scroll down to the 
-    function <code>MainWindowWorkerThread::ThreadRoutine</code>
+<p>Save all the changes, recompile blockem and your heuristic will be 
+    magically available to be selected in the "new Game" and the "configuration"
+    menu. You will be able to test your new heuristic against the "random" one,
+    or try to beat it playing blockem in a 1vs1 game
 </p>
-<code>
-    /* ... */<br/>
-    int32_t depth = 3;<br/>
-    Heuristic::EvalFunction_t heuristicMethod = Heuristic::CalculateNKWeighted;<br/>
-    if ( (thisThread->m_localGame.GetPlayerMe().NumberOfPiecesAvailable() < 14)<br/>
-    &nbsp;&nbsp;     &&<br/>
-    &nbsp;&nbsp;     (thisThread->m_localGame.CanPlayerOpponentGo()) )<br/>
-    &nbsp;&nbsp;{<br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;    depth = 5;<br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;    // heuristicMethod = Heuristic::CalculatePiecesPerNKPoint;<br/>
-    &nbsp;&nbsp;}<br/>
-    /* ... */<br/>
-</code>
 </li>
 </ol>
 <p><br/></p>
@@ -248,21 +368,21 @@ are defined in ePieceType_t enum in Piece.h, so pieces in that enum are sorted
 from worse to better (from less likely to do a good move to more likely):</p>
    
 <code>
-    typedef enum<br/>
-    {<br/>
-        &nbsp;&nbsp;// if this enum is modified, ensure all the constants are updated <br/>
-        &nbsp;&nbsp;// accordingly<br/>
-        &nbsp;&nbsp;e_minimumPieceIndex = 0,<br/>
+&nbsp;&nbsp;typedef enum<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;// if this enum is modified, ensure all the constants are updated <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;// accordingly<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_minimumPieceIndex = 0,<br/>
        <br/>
-        &nbsp;&nbsp;e_1Piece_BabyPiece   = e_minimumPieceIndex,<br/>
-        &nbsp;&nbsp;e_2Piece_TwoPiece    = 1,<br/>
-        &nbsp;&nbsp;e_3Piece_LongPiece   = 2,<br/>
-        &nbsp;&nbsp;/* ... */<br/>
-        &nbsp;&nbsp;e_5Piece_TheUltimate = 20,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_1Piece_BabyPiece   = e_minimumPieceIndex,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_2Piece_TwoPiece    = 1,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_3Piece_LongPiece   = 2,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;/* ... */<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_5Piece_TheUltimate = 20,<br/>
        <br/>
-        &nbsp;&nbsp;e_numberOfPieces = 21,<br/>
-        &nbsp;&nbsp;e_noPiece = 22,   <br/>
-    } ePieceType_t;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_numberOfPieces = 21,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e_noPiece = 22,   <br/>
+&nbsp;&nbsp;} ePieceType_t;<br/>
 </code>
    
 <p>Another design step was made to trim out possibly useless branches of the 
@@ -293,7 +413,7 @@ in blockem. If you think this may be of your interest, code away and have fun!
       <td align="left" width="50%">
         <p>
         <small>
-          Copyright (c) 2009-<script type="text/javascript">var d = new Date();document.write(d.getFullYear());</script>. <a href="http://www.sourceforge.net/sendmessage.php?touser=743915">Faustino Frechilla</a><br>Last modified: 16th April 2010
+          Copyright (c) 2009-<script type="text/javascript">var d = new Date();document.write(d.getFullYear());</script>. <a href="http://www.sourceforge.net/sendmessage.php?touser=743915">Faustino Frechilla</a><br>Last modified: 13th May 2010
         </small> 
         </p>
       </td>
