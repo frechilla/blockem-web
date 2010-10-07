@@ -81,7 +81,66 @@
          <li>make-3.81-20090914-mingw32-bin.tar.gz</li>
         </ul>
         </li>
-        <li>And that is pretty much it!</li>
+        <li>From version 0.2.4 blockem has support for internationalization, (uses gettext
+for that matter). These are the packets you need to compile blockem in win32
+with full support for localization
+        <ul>
+         <li>gettext-0.17-2-msys-1.0.13-bin.tar.lzma</li>
+         <li>gettext-0.17-2-msys-1.0.13-dev.tar.lzma</li>
+         <li>libintl-0.17-2-msys-dll-8.tar.lzma</li>
+         <li>libgettextpo-0.17-2-msys-dll-0.tar.lzma</li>
+         <li>libtermcap-0.20050421_1-2-msys-1.0.13-dll-0.tar.lzma</li>
+         <li>libexpat-2.0.1-1-msys-1.0.13-dll-1.tar.lzma</li>
+         <li>libiconv-1.13.1-2-msys-1.0.13-dll-2.tar.lzma</li>
+        </ul>
+        </li>
+        <li>libintl is not included in the packets above because compiling the app against
+the libintl version included in MinGW is giving errors at linking time:<br/>
+<pre>
+    main.o:main.cpp:(.text+0x191b): undefined reference to '__printf__'
+</pre>
+        </li>
+        <li>to prevent this from happening you have to pass a few options to the configure
+script to force the app to compile against the gettext library included in
+the package. Pthreads should also be disabled since having them on produces
+a lot of linker errors when blockem is linked against the libintl library.
+Libintl can be built without pthread support without any problem, and blockem 
+will still have 2 threds because they are gthreads instead of pthreads.So, 
+to summarise, after setting up your environment correctly you will have to
+run the configure script like this:<br/>
+<pre>
+    ./configure --with-included-gettext --disable-threads
+</pre>
+        </li>Now, once the configure script has been run the app is ready to be compiled
+using the command 'make', but before you do this you've got to bear in mind
+localization in win32 is different from GNU Linux systems. To force blockem
+to be shown in a specific language (obviously, a language that blockem has 
+already been translated into) you just have to run from a terminal (it'll 
+be translated into Spanish):<br/>
+<pre>
+    $ LANG=es_ES.UTF-8 blockem
+</pre>
+        <li>if no LANG variable is set when you run blockem the app will retrieve the 
+system's one, wich will be english if your system was originally installed
+in English, or Spanish, etc.
+        </li>
+        <li>Gtk retrieves the system default language In win32, but it cannot be set
+as easily as in Linux if you want to change the language. So a decission
+had to be made on how blockem will be handling languages on win32 platforms.
+For the moment there is a call to putenv in main.cpp that decides which 
+language blockem will run with. It is hardcoded and it can only be changed
+at compile time:<br/>
+<pre>
+    // This call force the app to be shown on a Spanish (Spain)
+    putenv ("LANG=es_ES");
+</pre>
+        </li>
+        <li>
+So for the moment blockem is compiled as many times as languages are supported,
+therefore one package is released per language and the user can pick which
+version he/she wants. In the future language will be picked using the menus of
+the application, but this is doing the trick for now
+        </li>
       </p>
 </table>
 
