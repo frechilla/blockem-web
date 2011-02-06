@@ -457,9 +457,10 @@
       </p>
       <p><h3>Linux:</h3></p>
       <p></p>
-      <p>Compiling blockem in a linux environment is "almost" straight away, you'll need to have the g++ compiler and the gtkmm-2.4 library for developers. The process to install these libraries differs depending on the type of linux you are using:
+      <p>Compiling blockem in a linux environment is "almost" straight away, you'll need to have the g++ compiler and the gtkmm-2.4 and libxml2 libraries for developers. Note that the libxml2 dependency has been added in version 0.3.0, so if you are planning to compile an older version there is no need to install this library. </p>
+      <p>All in all, the process to install these libraries differs depending on the type of linux you are using:
       <ul>
-        <li>In <a href="http://www.ubuntu.com/">Ubuntu</a>, open a terminal and run 'sudo apt-get install g++ libgtkmm-2.4-dev'</li>
+        <li>In <a href="http://www.ubuntu.com/">Ubuntu</a>, open a terminal and run 'sudo apt-get install g++ libgtkmm-2.4-dev libxml2-dev'</li>
         <li>In any other debian-based linux make yourself root and install those same packages</li>
         <li>If your Linux is not debian-based Google will help you to find and install those libraries</li>
       </ul>
