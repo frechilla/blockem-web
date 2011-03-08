@@ -1,519 +1,276 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-  <title>Blockem</title>
-  <meta content="Faustino Frechilla" name="author">
-  <meta content="Blockem project page" name="description">
-  <meta content="blockem blokus board game freeware free download gratis gnu gpl" name="keywords">
-  <meta content="all" name="robots">
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <meta name="generator" content="Bluefish 1.0.7">
-  <link rel="shortcut icon" href="images/blockemicon.ico" type="image/x-icon" />
+<!--
+ ____________________________________________________________
+|                                                            |
+|    DESIGN + Pat Heard { http://fullahead.org }             |
+|      DATE + 2006.03.19                                     |
+| COPYRIGHT + Free use if this notice is left in place       |
+|____________________________________________________________|
 
-  <!-- css style -->
-  <style  type="text/css">
-    a:link {
-        color: #453b77;
-    }
-    a:visited {
-        color: #453b77;
-    }
-    a:hover{
-        color: #453b77;
-        background-color: #fde72d;
-    }
-    a:active {
-        color: #453b77;
-    }
-    a {
-        text-decoration: underline;
-    }
-  </style>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-UK">
+<head>
+
+  <title>Block'em - The GNU polyominoes board game</title>
+
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta name="author" content="Faustino Frechilla" />
+  <meta name="keywords" content="blockem board game free download gratis gnu gpl" />
+  <meta name="description" content="Blockem project homepage" />
+  <meta name="generator" content="Bluefish 1.0.7"/>
+  <!-- default is index, follow. No need to have this tag here -->
+  <meta name="robots" content="index, follow" /> 
+  
+  <link rel="shortcut icon" href="images/blockemicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="css/html.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="css/layout.css" media="screen, projection, tv" />
+  <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
 
 </head>
 
-<body style="background-color: rgb(255, 216, 165);">
-<table align="center" border="0" cellpadding="5" width="95%">
-  <tbody>
-    <tr>
-      <td valign="top" width="25%" align="right"><a href="http://blockem.sourceforge.net/" style="text-decoration:none; background-color: #ffd8a5">
-              <img alt="blockem icon" src="images/blockemlogo128.png" border="0"></a>
-      </td>
-      <td align="left" width="75%"valign="vcenter"><a href="http://blockem.sourceforge.net/" style="text-decoration:none">
-        <h1> Blockem</h1></a>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" width="25%">
-      <br/>
-      <p align="center"><img alt="blockem game" src="images/screenshot.jpg" border="0"></p>
-      <p align="center">Found a bug? File it <a href="http://sourceforge.net/tracker/?func=add&group_id=302382&atid=1274903">here</a>. It will be fixed as soon as possible!</p>
-      <p></p>
-      <br/>
-      <p align="center"><font size="+1"><a href="#download">Download</a></font> blockem...</p>
-      <p align="center">... or have a look at the <a href="http://sourceforge.net/project/screenshots.php?group_id=302382">screenshots</a></p>
-      <p><br/></p>
-      </td>
-      <td>
-      <p align="left"><h2>What is blockem?</h2></p>
-      <p>Blockem is an <a href="doc/COPYING">open source</a> clone of the board strategy game <a href="http://www.blokus.com">blokus</a> in its <a href="http://en.wikipedia.org/wiki/Blokus#Blokus_Duo.2FTravel_Blokus">duo</a> version. It is available for Unix-like systems and Windows and it is written in C++/<a href="http://www.gtkmm.org/">GTKmm</a> (the C++ wrapper of <a href="http://www.gtk.org/">GTK+</a>)</p>
-      <p>Blockem is the result of "a bit of" a obsession I have since I first discovered blokus back in 2008. Back in those days an idea crossed over our (my and my workmates') heads, creating a smart blokus player to be used in one of the several 3 blokus games we used to play whenever the 4th player was missing.</p>
-      <p>Later on, once the project was started, we realised a smart blokus player in a 4 player game is, firstly, much more complicated to develop, and secondly, much harder to proof to be smart, due to the nature of the 4-players blokus game. 
-      If you ever played a blokus game I am sure you have noticed 4-players blokus is not a fully strategical game but more of a psychological one, since you can get ganged up by the other 3 players, isn't it James?</p>
-      Blockem is <a href="http://www.fsf.org/">free software</a> released under GNU GPL v3
-      <p><br/></p>      
-      <p><h2>Rules:</h2></p>
-      <p>Basically you've got 21 pieces to put down on the board (which are a set of all the possible free <a href="http://en.wikipedia.org/wiki/Polyomino">polyominoes</a> from 1 to 5 squares), while preventing your opponent from doing the same. There are 3 basic rules to put down pieces on the board:
-      <ul>
-        <li>The first piece played of each color is placed 5 squares far from one of the board's four corners. The opponent starts 5 squares far from the opposite corner.</li>
-        <li>Each new piece played must be placed so that it touches at least one piece of the same color, with only corner-to-corner contact allowed. (Edges cannot touch).</li>
-        <li>When a player cannot place a piece, he or she passes, and play continues as normal. The game ends when no one can place a piece</li>
+<body>
+<!-- CONTENT: Holds all site content except for the footer.  This is what causes the footer to stick to the bottom -->
+<div id="content">
+
+  <!-- HEADER: Holds title, subtitle and header images -->
+  <div id="header">
+  
+    <div id="title">
+      <h1>Block'em</h1>
+      <!-- <h2>( all )</h2> -->
+    </div>
+    
+    <img src="images/bg/header_left.jpg" alt="left slice" class="left" />
+    <img src="images/bg/header_right.jpg" alt="right slice" class="right" />
+    
+  </div>
+
+  <!-- MAIN MENU: Top horizontal menu of the site.  Use class="here" to turn the current page tab on -->
+  <div id="mainMenu">
+    <ul class="floatRight">
+      <li><a href="index.html" title="Homepage" class="here">Home</a></li>
+      <li><a href="download.html" title="Download blockem">Download</a></li>
+      <li><a href="devel.html" title="The developers and contributors area">Developers</a></li>
+      <li><a href="involved.html" title="Get involved in the project">Get Involved</a></li>
+      <li><a href="contact.html" title="Get in touch" class="last">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- PAGE CONTENT BEGINS: This is where you would define the columns (number, width and alignment) -->
+  <div id="page">
+
+    <!-- 25 percent width column, aligned to the left -->
+    <div class="width25 floatLeft leftColumn">
+
+      <h1>Home</h1>
+
+      <ul class="sideMenu">
+        <li class="here">
+          Contents
+          <ul>
+            <li><a href="#news" title="Jump to section">News</a></li>
+            <li><a href="#intro" title="Jump to section">The project</a></li>
+            <li><a href="#rules" title="Jump to section">Rules</a></li>
+            <li><a href="#history" title="Jump to section">A hint of history</a></li>
+          </ul>
+        </li>
+        
+        <li>&nbsp;</li>
+
+        <li class="here">
+          The most popular
+          <ul>
+            <li><a href="download.html#getblockem" title="Jump to section">Download latest version</a></li>
+            <li><a href="#rules" title="Jump to section">Rules</a></li>
+            <li><a href="devel.html#compile" title="Jump to section">Compile the sources</a></li>
+          </ul>
+        </li>
+        
       </ul>
-      </p>
-      <p><br/></p>
-      <p><h2 id="download">Download:</h2></p>
-      <p>
-      This is a list of all the different releases of blockem made so far. Latest is <b>0.3.2</b>, which was released on the <b>19th of January 2011</b>. 
-      </p>
-      <p>
-      You might also want to browse the sources in the <a href="http://blockem.svn.sourceforge.net/">svn repository</a>
-      </p>
-      <table border="1" cellpadding="3" cellspacing="3" width="90%" alignt="center">
-      <tr>
-        <th>Version</th>
-        <th>File</th>
-        <th>Platform</th>
-        <th>Languages</th>
-        <th>Type</th>
-      </tr>
-      
-      <tr>
-        <td rowspan="5" align="center" valign="top">0.3.2</td>
-        <td><a href="https://sourceforge.net/projects/blockem/files/0.3.2/blockem_0.3.2-2_i386.deb/download">blockem_0.3.2-2_i386.deb</a></td>
-        <td align="center"><img alt="linux" src="images/linux.png" border="0"><img alt="debian" src="images/debian.png" border="0"><img alt="ubuntu" src="images/ubuntu.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0">&nbsp;<img alt="Spanish" src="images/spains.png" border="0"></td>
-        <td>debian package</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.3.2/blockem-0.3.2-english-win32-bin.zip/download">blockem-0.3.2-english-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.3.2/blockem-0.3.2-espa_ol-win32-bin.zip/download">blockem-0.3.2-espa&ntilde;ol-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="Spanish" src="images/spains.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.3.2/blockem-0.3.2.tar.gz/download">blockem-0.3.2.tar.gz</a></td>
-        <td align="center">(all)</td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0">&nbsp;<img alt="Spanish" src="images/spains.png" border="0"></td>
-        <td>sources</td>
-      </tr>
-      <tr>
-        <td><a href="doc/CHANGELOG-0.3.2">CHANGELOG</a></td>
-        <td align="center">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
 
-      <tr>
-        <td rowspan="5" align="center" valign="top">0.3.1</td>
-        <td><a href="https://sourceforge.net/projects/blockem/files/0.3.1/blockem_0.3.1-2_i386.deb/download">blockem_0.3.1-2_i386.deb</a></td>
-        <td align="center"><img alt="linux" src="images/linux.png" border="0"><img alt="debian" src="images/debian.png" border="0"><img alt="ubuntu" src="images/ubuntu.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0">&nbsp;<img alt="Spanish" src="images/spains.png" border="0"></td>
-        <td>debian package</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.3.1/blockem-0.3.1-english-win32-bin.zip/download">blockem-0.3.1-english-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.3.1/blockem-0.3.1-espa_ol-win32-bin.zip/download">blockem-0.3.1-espa&ntilde;ol-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="Spanish" src="images/spains.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.3.1/blockem-0.3.1.tar.gz/download">blockem-0.3.1.tar.gz</a></td>
-        <td align="center">(all)</td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0">&nbsp;<img alt="Spanish" src="images/spains.png" border="0"></td>
-        <td>sources</td>
-      </tr>
-      <tr>
-        <td><a href="doc/CHANGELOG-0.3.1">CHANGELOG</a></td>
-        <td align="center">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-     
-      <tr>
-        <td rowspan="5" align="center" valign="top">0.3.0</td>
-        <td><a href="https://sourceforge.net/projects/blockem/files/0.3.0/blockem_0.3.0-1_i386.deb/download">blockem_0.3.0-1_i386.deb</a></td>
-        <td align="center"><img alt="linux" src="images/linux.png" border="0"><img alt="debian" src="images/debian.png" border="0"><img alt="ubuntu" src="images/ubuntu.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0">&nbsp;<img alt="Spanish" src="images/spains.png" border="0"></td>
-        <td>debian package</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.3.0/blockem-0.3.0-english-win32-bin.zip/download">blockem-0.3.0-english-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.3.0/blockem-0.3.0-espa_ol-win32-bin.zip/download">blockem-0.3.0-espa&ntilde;ol-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="Spanish" src="images/spains.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.3.0/blockem-0.3.0.tar.gz/download">blockem-0.3.0.tar.gz</a></td>
-        <td align="center">(all)</td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0">&nbsp;<img alt="Spanish" src="images/spains.png" border="0"></td>
-        <td>sources</td>
-      </tr>
-      <tr>
-        <td><a href="doc/CHANGELOG-0.3.0">CHANGELOG</a></td>
-        <td align="center">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      
-      <tr>
-        <td rowspan="5" align="center" valign="top">0.2.4</td>
-        <td><a href="https://sourceforge.net/projects/blockem/files/0.2.4/blockem_0.2.4-1_i386.deb/download">blockem_0.2.4-1_i386.deb</a></td>
-        <td align="center"><img alt="linux" src="images/linux.png" border="0"><img alt="debian" src="images/debian.png" border="0"><img alt="ubuntu" src="images/ubuntu.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0">&nbsp;<img alt="Spanish" src="images/spains.png" border="0"></td>
-        <td>debian package</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.2.4/blockem-0.2.4-english-win32-bin.zip/download">blockem-0.2.4-english-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.2.4/blockem-0.2.4-espa_ol-win32-bin.zip/download">blockem-0.2.4-espa&ntilde;ol-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="Spanish" src="images/spains.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.2.4/blockem-0.2.4.tar.gz/download">blockem-0.2.4.tar.gz</a></td>
-        <td align="center">(all)</td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0">&nbsp;<img alt="Spanish" src="images/spains.png" border="0"></td>
-        <td>sources</td>
-      </tr>
-      <tr>
-        <td><a href="doc/CHANGELOG-0.2.4">CHANGELOG</a></td>
-        <td align="center">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      
-      <tr>
-        <td rowspan="4" align="center" valign="top">0.2.3</td>
-        <td><a href="https://sourceforge.net/projects/blockem/files/0.2.3/blockem_0.2.3-1_i386.deb/download">blockem_0.2.3-1_i386.deb</a></td>
-        <td align="center"><img alt="linux" src="images/linux.png" border="0"><img alt="debian" src="images/debian.png" border="0"><img alt="ubuntu" src="images/ubuntu.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>debian package</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.2.3/blockem-0.2.3-win32-bin.zip/download">blockem-0.2.3-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.2.3/blockem-0.2.3.tar.gz/download">blockem-0.2.3.tar.gz</a></td>
-        <td align="center">(all)</td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>sources</td>
-      </tr>
-      <tr>
-        <td><a href="doc/CHANGELOG-0.2.3">CHANGELOG</a></td>
-        <td align="center">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      
-      <tr>
-        <td rowspan="4" align="center" valign="top">0.2.2</td>
-        <td><a href="https://sourceforge.net/projects/blockem/files/0.2.2/blockem_0.2.2-1_i386.deb/download">blockem_0.2.2-1_i386.deb</a></td>
-        <td align="center"><img alt="linux" src="images/linux.png" border="0"><img alt="debian" src="images/debian.png" border="0"><img alt="ubuntu" src="images/ubuntu.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>debian package</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.2.2/blockem-0.2.2-win32-bin.zip/download">blockem-0.2.2-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.2.2/blockem-0.2.2.tar.gz/download">blockem-0.2.2.tar.gz</a></td>
-        <td align="center">(all)</td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>sources</td>
-      </tr>
-      <tr>
-        <td><a href="doc/CHANGELOG-0.2.2">CHANGELOG</a></td>
-        <td align="center">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-
-      <tr>
-        <td rowspan="4" align="center" valign="top">0.2.1</td>
-        <td><a href="https://sourceforge.net/projects/blockem/files/0.2.1/blockem_0.2.1-1_i386.deb/download">blockem_0.2.1-1_i386.deb</a></td>
-        <td align="center"><img alt="linux" src="images/linux.png" border="0"><img alt="debian" src="images/debian.png" border="0"><img alt="ubuntu" src="images/ubuntu.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>debian package</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.2.1/blockem-0.2.1-win32-bin.zip/download">blockem-0.2.1-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.2.1/blockem-0.2.1.tar.gz/download">blockem-0.2.1.tar.gz</a></td>
-        <td align="center">(all)</td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>sources</td>
-      </tr>
-      <tr>
-        <td><a href="doc/CHANGELOG-0.2.1">CHANGELOG</a></td>
-        <td align="center">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>            
-      
-      <tr>
-        <td rowspan="4" align="center" valign="top">0.2.0</td>
-        <td><a href="https://sourceforge.net/projects/blockem/files/0.2.0/blockem_0.2.0-4_i386.deb/download">blockem_0.2.0-4_i386.deb</a></td>
-        <td align="center"><img alt="linux" src="images/linux.png" border="0"><img alt="debian" src="images/debian.png" border="0"><img alt="ubuntu" src="images/ubuntu.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>debian package</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.2.0/blockem-0.2.0-win32-bin.zip/download">blockem-0.2.0-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.2.0/blockem-0.2.0.tar.gz/download">blockem-0.2.0.tar.gz</a></td>
-        <td align="center">(all)</td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>sources</td>
-      </tr>
-      <tr>
-        <td><a href="doc/CHANGELOG-0.2.0">CHANGELOG</a></td>
-        <td align="center">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>      
-
-      <tr>
-        <td rowspan="3" align="center" valign="top">0.1.6</td>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.1.6/blockem-0.1.6-win32-bin.zip/download">blockem-0.1.6-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-      <td><a href="http://sourceforge.net/projects/blockem/files/0.1.6/blockem-0.1.6.tar.gz/download">blockem-0.1.6.tar.gz</a></td>
-        <td align="center">(all)</td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>sources</td>
-      </tr>
-      <tr>
-        <td><a href="doc/CHANGELOG-0.1.6">CHANGELOG</a></td>
-        <td align="center">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>      
-
-      <tr>
-        <td rowspan="3" align="center" valign="top">0.1.5</td>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.1.5/blockem-0.1.5-win32-bin.zip/download">blockem-0.1.5-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.1.5/blockem-0.1.5.tar.gz/download">blockem-0.1.5.tar.gz</a></td>
-        <td align="center">(all)</td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>sources</td>
-      </tr>
-      <tr>
-        <td><a href="doc/CHANGELOG-0.1.5">CHANGELOG</a></td>
-        <td align="center">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      
-      <tr>
-        <td rowspan="3" align="center" valign="top">0.1.4</td>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.1.4/blockem-0.1.4-win32-bin.zip/download">blockem-0.1.4-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.1.4/blockem-0.1.4.tar.gz/download">blockem-0.1.4.tar.gz</a></td>
-        <td align="center">(all)</td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>sources</td>
-      </tr>
-      <tr>
-        <td><a href="doc/CHANGELOG-0.1.4">CHANGELOG</a></td>
-        <td align="center">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-            
-      <tr>
-        <td rowspan="3" align="center" valign="top">0.1.3</td>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.1.3/blockem-0.1.3-win32-bin.zip/download">blockem-0.1.3-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.1.3/blockem-0.1.3.tar.gz/download">blockem-0.1.3.tar.gz</a></td>
-        <td align="center">(all)</td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>sources</td>
-      </tr>
-      <tr>
-        <td><a href="doc/CHANGELOG-0.1.3">CHANGELOG</a></td>
-        <td align="center">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      
-      <tr>
-        <td rowspan="3" align="center" valign="top">0.1.2</td>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.1.2/blockem-0.1.2-win32-bin.zip/download">blockem-0.1.2-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.1.2/blockem-0.1.2.tar.gz/download">blockem-0.1.2.tar.gz</a></td>
-        <td align="center">(all)</td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>sources</td>
-      </tr>
-      <tr>
-        <td><a href="doc/CHANGELOG-0.1.2">CHANGELOG</a></td>
-        <td align="center">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-            
-      <tr>
-        <td rowspan="2" align="center" valign="top">0.1.1</td>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.1.1/blockem-0.1.1-win32-bin.zip/download">blockem-0.1.1-win32-bin.zip</a></td>
-        <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>zipped binary</td>
-      </tr>
-      <tr>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.1.1/blockem-0.1.1-src.tar.gz/download">blockem-0.1.1.tar.gz</a></td>
-        <td align="center">(all)</td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>sources</td>
-      </tr>
-            
-      <tr>
-        <td rowspan="1" align="center" valign="top">0.1.0</td>
-        <td><a href="http://sourceforge.net/projects/blockem/files/0.1.0/blockem-0.1.0.tar.gz/download">blockem-0.1.0.tar.gz</a></td>
-        <td align="center"><img alt="linux" src="images/linux.png" border="0"></td>
-        <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
-        <td>sources</td>
-      </tr>
-      </table>
-      </p>
-      <p><br/></p>
-      <p><h2>Artificial Intelligence:</h2></p>
-      <p></p>
-      <p>Artificial intelligence is the main reason why this project was started in the first place. The aim at the very beginning was creating a smart blokus player to be used in one of the several 3-player blokus games we used to play whenever a player was missing.</p>
- 		<p>Later on, once the project was started, we realised a smart blokus player in a 4 player game is, firstly, much more complicated to develop, and secondly, much harder to proof to be smart, due to the nature of the 4-players blokus game. 
-      If you ever played a blokus game I am sure you have noticed 4-players blokus is not a fully strategical game but more of a psychological one, since you can get ganged up by the other 3 players. However, blokus duo is pure strategical, you are responsible for your moves and you have to play against only one opponent. This is the main reason why the project changed at the early stages to be a blokus clone for the 1vs1 game (duo).</p>
-      <p>Of course, this doesn't mean I don't want the project to be extended to cover the 4-player game too (in fact, I would love it, since, I already said, it was the reason why this whole thing was started in the first place)</p>
- 		<p>For whoever is interested in this part of blockem, I have written a document explaining the main parts of the AI, and how you can extend it if you are interested. It is contained in the source package in the doc/ directory, or in HTML format <a href="doc/heuristics.html">here</a>. Happy reading!</p>
-      <p><br/></p>
-      <p><h2>HOWTO compile blockem sources:</h2></p>
       <p>
-      Blockem sources have been compiled in both Linux and Windows, however it should compile in every platform where <a href="http://www.gtkmm.org/">GTKmm</a> has been ported. There is an official bunch of <a href="http://www.gtkmm.org/">GTKmm</a> installers for lots of Linux flavours and other operative systems <a href="http://www.gtkmm.org/download.shtml">here</a>. Note that these instructions apply only to version 0.2.0 and above. For older versions you'll also need libglademm-2.4. (libglademm-2.4 dependency was removed in <a href="doc/CHANGELOG-0.2.0">0.2.0</a>)
+        <h2>Latest news</h2>
+        <h4>27th of February, 2011</h4>      
+        New block'em website has been launched. Read more <a href="index.html#news">here</a>
+        
+        <h4>19th of January, 2011</h4>      
+        Blockem 0.3.2 has been released today! Download it from <a href="download.html#getblockem">here</a>
       </p>
-      <p><h3>Linux:</h3></p>
-      <p></p>
-      <p>Compiling blockem in a linux environment is "almost" straight away, you'll need to have the g++ compiler and the gtkmm-2.4 and libxml2 libraries for developers. Note that the libxml2 dependency has been added in version 0.3.0, so if you are planning to compile an older version there is no need to install this library. </p>
-      <p>All in all, the process to install these libraries differs depending on the type of linux you are using:
-      <ul>
-        <li>In <a href="http://www.ubuntu.com/">Ubuntu</a>, open a terminal and run 'sudo apt-get install g++ libgtkmm-2.4-dev libxml2-dev'</li>
-        <li>In any other debian-based linux make yourself root and install those same packages</li>
-        <li>If your Linux is not debian-based Google will help you to find and install those libraries</li>
-      </ul>
-      </p>
-      <p>
-      Once your system has those requirements covered, it is ready to compile and install the package: 
-      <ol>
-        <li>Download the latest tarball from the <a href="http://sourceforge.net/projects/blockem/files/">releases</a> page</li>
-        <li>uncompress it: 'tar -zxf blockem-x.y.z.tar.gz'</li>
-        <li>cd into it: 'cd blockem-x.y.z'</li>
-        <li>run: './configure &amp;&amp; make'</li>
-        <li>run: 'sudo make install'</li>
-      </ol>
-      </p>
-      <p><h3>Windows:</h3></p>
-      <p>There is a ready-to-run precompiled binary in the release <a href="http://sourceforge.net/projects/blockem/files/">list</a>. If you still want to compile the sources in this platform have a look at this <a href="doc/howtowindows.html">HOWTO</a> I wrote when I compiled it for the 1st time.
-      </p>
-      <p><h3>MacOS X:</h3></p>
-      <p>There is a <a href="http://pdb.finkproject.org/pdb/package.php/gtkmm2.4-dev">Fink package</a> to install gtkmm on MacOS X. Once it is installed blockem should compile easily (though it hasn't been tested)</p>
-		<p><h3></h3></p>      
-      </td>
-    </tr>   
-  </tbody>
-</table>
-<hr>
-<table align="center" border="0" cellpadding="5" width="95%">
-  <tbody>
-    <tr>
-      <td align="left" width="50%">
+
+    </div>
+
+    <!-- 75 percent width column, aligned to the right -->
+    <div class="width75 floatRight">
+
+      <!-- Gives the gradient block -->
+      <div class="gradient">
+
+        <a name="news"></a>
+
+        <h1>News</h1>
+        <h2>People everywhere confuse what they read in newspapers with news</h2>
+
+        <h4>27th of February, 2011</h4>
+        
         <p>
-        <small>
-          Copyright (c) 2009-<script type="text/javascript">var d = new Date();document.write(d.getFullYear());</script>. <a href="http://www.sourceforge.net/sendmessage.php?touser=743915">Faustino Frechilla</a><br>Last modified: 20th January 2011
-        </small> 
+          The <b>new block'em website</b> has been launched today! Hope you like it as much as we do.
         </p>
-      </td>
-      <td align="right" width="50%">
-      <a rel="license" href="http://creativecommons.org/licenses/by/3.0/es/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/es/88x31.png" /></a>
-      &nbsp;
-      <a href="http://sourceforge.net/projects/blockem"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=302382&amp;type=3" alt="SourceForge.net" /></a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        <p>
+           Thanks to Pat Heard (<a href="http://fullahead.org">http://fullahead.org</a>) for his LazyDays design, which is the base of the style sheet used here.        
+        </p>
+        
+        <h4>19th of January, 2011</h4>
+        
+        <p>
+          <b><a href="download.html">Blockem 0.3.2</a></b> has been released today! 
+        </p>
+		  
+        <p>          
+          This release has solved a few bugs found in previous versions. A new <b>4-players</b> mode has been also added to allow 4 human beings to play against each other (no <acronym title="Artificial Intelligence">AI</acronym> available yet).
+        </p>
+        
+        <p>
+          Have a look at the <a href="doc/CHANGELOG">CHANGELOG</a> for further information on the changes made for this release.
+        </p>
 
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-16028570-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
+        <p>
+          Have you found a <b>bug</b>? Have you thought of a <b>new feature</b> you'd love to see in block'em? Drop me an <a href="contact.html">email</a> with any comment you may have (including the negative ones). Alternatively you can file your request in <a href="http://sourceforge.net/tracker/?group_id=302382">sourceforge</a>. 
+        </p>
+
+      </div>
+
+      <div class="gradient">
+
+        <a name="intro"></a>
+
+        <h1>The project</h1>
+        <h2>But what is it good for?</h2>
+        
+		<p>
+		  <b>Blockem</b> is an <a href="doc/COPYING">open source</a> clone of the board strategy game <a href="http://www.blokus.com">blokus</a>.  
+		  It is available for Unix-like systems and Windows and it is written in C++/<a href="http://www.gtkmm.org/">GTKmm</a> (the C++ wrapper of <a href="http://www.gtk.org/">GTK+</a>)
+		</p>
+        
+        <p>
+          This project features:
+          <ul>
+            <li>
+              A <b>2-player mode</b> (duo game), that can be played against the computer or between two human beings.
+              Several types of <acronym title="Artificial Intelligence">AI</acronym> are available when playing against the computer, 
+              all of them based on the <b>minimax algorithm</b>.
+            </li>
+            <li>A <b>Single-player</b> (solo) game, where you allocate all the pieces on the board. Starting position and size of the board are completely customizable.</li>
+            <li>A <b>4-players mode</b>, where all players are human. Starting position and size of the board are completely customizable too.</li>
+            <li>
+              A <b>challenge</b> mode. Basically a challenge describes a <b>board</b> (size and free squares) and a player -<b>challenger</b>- (set of pieces available plus starting position). A challenge is achieved when the challenger places all his/her pieces on the board.
+            </li>
+            <li>Blockem is available in two different languages: <b>English</b> and <b>Spanish</b>. I won't let go this chance to ask for help: If you are interested in translating it into your own language please visit the <a href="involved.html">get involved</a> page to learn more.</li>
+            <li>Easily expandable mechanism to <b>add new heuristics</b> for developers. (read more about this <a href="devel.html#ai">here</a>).</li>
+            <li>Duo games can be set up between different <acronym title="Artificial Intelligence">AI</acronym>s so that it can be used to compare heuristics.</li>
+            </ul>
+        </p>
+		  
+        <p>
+          <a href="http://stallman.org/">Richard Stallman</a> would be glad to know that <b>blockem</b> is <a href="http://www.fsf.org/">free software</a> released under GNU GPL v3.
+        </p>        
+
+      </div>
+
+
+      <div class="gradient">
+
+        <a name="rules"></a>
+
+        <h1>Rules</h1>
+        <h2>Any game needs a set of rules</h2>
+
+        <p>
+          In block'em you've got <b>21 pieces</b> to put down on the board (which are a set of all the possible free <a href="http://en.wikipedia.org/wiki/Polyomino">polyominoes</a> from 1 to 5 squares). Basically you will have to put down as many pieces as possible while <b>preventing your opponent</b> from doing the same. There are 3 basic rules to place pieces on the board:
+        </p>
+        
+        <ol>
+          <li><span>In 1vs1 games the first piece played of each color is placed 5 squares far from one of the board's four corners. The opponent starts 5 squares far from the opposite corner.
+            <ul>
+              <li>In 4 players games the first piece played of each color is placed in one of the board's four corners.</li>
+            </ul>
+          </span></li>
+          <li><span>Each new piece played must be placed so that it touches at least one piece of the same color, with only corner-to-corner contact allowed. (Edges cannot touch).</span></li>
+          <li><span>When a player cannot place a piece, he or she passes, and play continues as normal. The game ends when no one can place a piece.</span></li>
+        </ol>
+        
+        <p>
+          This is an example of how pieces have to be put down on the board. In this particular 4 players game, 3 of the players were able to deploy all their pieces, while the remaining one ended up with 7 pieces left (28 squares in total).
+        </p>
+        
+        <p align="center">
+          <img src="images/example_4pgame.jpg" alt="A four players game" /> 
+        </p>
+
+      </div>
+      
+      <div class="gradient">
+
+        <a name="history"></a>
+
+        <h1>A hint of history</h1>
+        <h2>History is something that happens to other people</h2>
+
+        <p>          
+          Blockem is the result of <i>a bit</i> of a <b>obsession</b> I have developed since I first discovered blokus back in 2008. In those days an idea crossed over our (my and my workmates') heads, create 
+          a smart blokus player to be used in one of the several blokus games we used to play whenever the 4th player was missing.
+        </p>
+
+        <p>
+          Later on, once the project was started, we realised a smart blokus player in a 4 player game is, firstly, much more complicated to develop, and secondly, much harder to prove to be smart, due to the nature of the 4-players blokus game. 
+          If you ever played a blokus game I am sure you have noticed 4-players blokus is not a fully strategical game, but more of a psychological one, since you can easily get ganged up by the other 3 players, isn't it James?
+        </p>
+        
+        <p>
+          The project's aim changed then, and its full purpose was to try to create a computer player driven by <acronym title="Artificial Intelligence">AI</acronym> to play <a href="http://en.wikipedia.org/wiki/Blokus#Blokus_Duo.2FTravel_Blokus">duo</a> games against a computer. 
+        </p>
+        
+        <p>
+          That was the beginning, but since then Block'em has <a href="#intro">evolved</a> into something bigger and bigger by each version released...
+        </p>
+        
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- FOOTER: Site footer for links, copyright, etc. -->
+<div id="footer">
+
+  <div id="width">
+    <span class="floatLeft">
+      <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" style="text-decoration:none">
+        <img src="http://i.creativecommons.org/l/by/3.0/80x15.png" alt="Creative Commons License" style="border:none;vertical-align:middle;" width="80" height="15" /></a><span class="grey">|</span>
+        
+      <a href="http://sourceforge.net/projects/blockem" style="text-decoration:none">
+        <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=302382&amp;type=8" style="border:none;vertical-align:middle;" width="80" height="15" alt="Get blockem at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a><span class="grey">|</span>
+        
+      valid <a href="http://validator.w3.org/check?uri=referer" title="Validate XHTML">XHTML</a> <span class="grey">|</span>
+      valid <a href="http://jigsaw.w3.org/css-validator" title="Validate CSS">CSS</a>
+    </span>
+
+    <span class="floatRight">
+      <a href="index.html" title="Homepage">home</a> <span class="grey">|</span>
+      <a href="download.html" title="Download blockem">download</a> <span class="grey">|</span>
+      <a href="devel.html" title="The developers and contributors area" class="here">developers</a> <span class="grey">|</span>
+      <a href="involved.html" title="Get involved in the project">get involved</a> <span class="grey">|</span>
+      <a href="contact.html" title="Get in touch" class="last">contact</a>
+    </span>
+  </div>
+
+</div>
 
 </body>
+
 </html>

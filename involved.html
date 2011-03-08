@@ -1,0 +1,253 @@
+<!--
+ ____________________________________________________________
+|                                                            |
+|    DESIGN + Pat Heard { http://fullahead.org }             |
+|      DATE + 2006.03.19                                     |
+| COPYRIGHT + Free use if this notice is left in place       |
+|____________________________________________________________|
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-UK">
+<head>
+
+  <title>Block'em - The GNU polyominoes board game</title>
+
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta name="author" content="Faustino Frechilla" />
+  <meta name="keywords" content="blockem board game free download gratis gnu gpl" />
+  <meta name="description" content="Blockem project homepage" />
+  <meta name="generator" content="Bluefish 1.0.7"/>
+  
+  <link rel="shortcut icon" href="images/blockemicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="css/html.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="css/layout.css" media="screen, projection, tv" />
+  <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+
+</head>
+
+<body>
+
+<!-- CONTENT: Holds all site content except for the footer.  This is what causes the footer to stick to the bottom -->
+<div id="content">
+
+  <!-- HEADER: Holds title, subtitle and header images -->
+  <div id="header">
+
+    <div id="title">
+      <h1>Block'em</h1>
+      <!-- <h2>( all )</h2> -->
+    </div>
+
+    <img src="images/bg/header_left.jpg" alt="left slice" class="left" />
+    <img src="images/bg/header_right.jpg" alt="right slice" class="right" />
+
+  </div>
+
+  <!-- MAIN MENU: Top horizontal menu of the site.  Use class="here" to turn the current page tab on -->
+  <div id="mainMenu">
+    <ul class="floatRight">
+      <li><a href="index.html" title="Homepage">Home</a></li>
+      <li><a href="download.html" title="Download blockem">Download</a></li>
+      <li><a href="devel.html" title="The developers and contributors area">Developers</a></li>
+      <li><a href="involved.html" title="Get involved in the project" class="here">Get Involved</a></li>
+      <li><a href="contact.html" title="Get in touch" class="last">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- PAGE CONTENT BEGINS: This is where you would define the columns (number, width and alignment) -->
+  <div id="page">
+
+    <!-- 25 percent width column, aligned to the left -->
+    <div class="width25 floatLeft leftColumn">
+
+      <h1>Get involved</h1>
+
+      <ul class="sideMenu">
+        <li class="here">
+          Contents
+          <ul>
+            <li><a href="#getintouch" title="Jump to section">Get involved in block'em</a></li>
+            <li><a href="#todo" title="Jump to section">The TODO list</a></li>
+          </ul>
+        </li>
+        
+        <li>&nbsp;</li>
+
+        <li class="here">
+          The most popular
+          <ul>
+            <li><a href="download.html#getblockem" title="Jump to section">Download latest version</a></li>
+            <li><a href="#rules" title="Jump to section">Rules</a></li>
+            <li><a href="devel.html#compile" title="Jump to section">Compile the sources</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+
+      <p>
+        <h2>Latest news</h2>
+        <h4>27th of February, 2011</h4>      
+        New block'em website has been launched. Read more <a href="index.html#news">here</a>
+        
+        <h4>19th of January, 2011</h4>      
+        Blockem 0.3.2 has been released today! Download it from <a href="download.html#getblockem">here</a>
+      </p>
+
+    </div>
+
+    <!-- 75 percent width column, aligned to the right -->
+    <div class="width75 floatRight">
+
+      <!-- Gives the gradient block -->
+      <div class="gradient">
+
+        <a name="getintouch"></a>
+
+        <h1>Get involved in block'em</h1>
+        <h2>Go ahead, make my day</h2>
+        
+        <p>
+          The beauty of free software (free as in freedom) is that <b>everybody</b> can use, see and change the software. Block'em is free software and as such you are 
+          entitled to have a look at its sources, but also to change them and actively partipate in it!
+        </p>
+		
+        <p>
+          Good news is, block'em is quite far from being finished. There are <b>a lot</b> of things yet to be done. Some of them are described in the <a href="#todo">TODO list</a> section, but some others are yet to be discovered by random users and programmers.
+        </p>
+        
+        <p>          
+          If you have a new feature request (doesn't really matter how crazy it might look, this project is driven by fun) or if you want to actively participate in Block'em, all you will have to do is dropping me an <a href="contact.html">e-mail</a>, and tell me about your ideas, requests, suggestions... I will be very glad to help.
+        </p>
+        
+        <p>
+          Alternatively to the old e-mail way, you can submit your bug or feature request in <a href="http://sourceforge.net/tracker/?group_id=302382">sourceforge</a>. Either way your messages will get to me.
+        </p>
+
+      </div>
+      
+      <div class="gradient">
+
+        <a name="todo"></a>
+
+        <h1>The (always growing) TODO list</h1>
+        <h2>After all, tomorrow is another day!</h2>
+        
+        <p>
+          Don't take this section too serious. This is just a list of things that once crossed over my mind and I would be very glad to see in block'em. If you have any interest in participating in this project, pick the one you like the most and start working on it. If you need any help <a href="contact.html">contact</a> me and I will answer as soon as I can.
+        </p>
+        
+        <p>
+          Also, if you think something should be added to the big TODO list here, <a href="contact.html">let me know</a>.
+        </p>
+		
+        <h4>New features</h4>
+        <ul>
+          <li>
+            Write new <acronym title="Artificial Intelligence">AI</acronym> schemes for 1vs1 games. If you are interested have a look at the <acronym title="Artificial Intelligence">AI</acronym> section in the 
+            <a href="devel.html#ai">developers</a> area.
+          </li>
+          <li><acronym title="Artificial Intelligence">AI</acronym> for 4 players games</li>
+          <li>
+            Improve GUI appearance. For example, depth is a very technical parameter,
+            far from what a good user interface should look like.
+          </li>
+          <li>
+            At the moment the application is <i>on hold</i> while the human user is thinking of the next move. This
+            time could be used by the AI engine to start calculating next move.
+          </li>
+          <li>
+            Keep track of all the moves made during the game so that it could be possible to go backwards
+            in time to explore or change past moves.
+          </li>
+          <li>Save current games to be able to resume the game later on.</li>
+          <li>
+            There is some work done on bitwise representation of boards and pieces because it looked
+            like it could improve performance, but hasn't been finished yet.
+          </li>
+          <li>
+            <acronym title="Artificial Intelligence">AI</acronym> algorithm is not multithreaded, though building up a 
+            search tree looks like a good (and relatively easy) thing to be multithreaded.
+          </li>
+          <li>Add a way to mark which challenges are 'completed' by the user</li>
+        </ul>
+        
+        <h4>Packaging and distribution</h4>
+        <ul>
+          <li>
+            The application has been succesfully ported to windows, but it is distributed using a zip file which is
+            supposed to be decompressed by the user. It would be nice to have the typical windows installer.
+          </li>
+          <li>
+            Create a RPM package for blockem (should be easy using the .deb as a reference)
+          </li>
+          <li>
+            Block'em has only been ported to GNU/Linux and Windows, but it <i>should</i> compile in every platform
+            supported by GTKmm. Would be nice to check where it compiles, and what are the changes needed in code
+            for blockem to work properly in those platforms.
+          </li>
+        </ul>        
+        
+        <h4>Internationalisation</h4>
+        <ul>
+          <li>
+            According to <a href="http://www.ethnologue.com/ethno_docs/distribution.asp?by=area">Ethnologue</a>
+            there are <b>6909</b> living languages in the world. But Block'em is only available in two languages: 
+            English and Spanish. Wouldn't you like block'em in your own language? Have a look at the internationalization
+            section in the <a href="devel.html#i18n">developers</a> area.
+          </li>
+        </ul>
+
+        <h4>Documentation</h4>
+        <ul>
+          <li>
+            The code as been written keeping doxygen comment style in mind. It would be nice to have the documentation
+            generated by it available for developers.          
+          </li>
+          <li>The script used to profile the execution of blockem is based on gprof. Would be nice to check cachegrind.</li>
+          <li>
+            It would be really nice to have some sort of help embedded in the blockem application. Especially
+            for the rules of the game.     
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- FOOTER: Site footer for links, copyright, etc. -->
+<div id="footer">
+
+  <div id="width">
+    <span class="floatLeft">
+      <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" style="text-decoration:none">
+        <img src="http://i.creativecommons.org/l/by/3.0/80x15.png" alt="Creative Commons License" style="border:none;vertical-align:middle;" width="80" height="15" /></a><span class="grey">|</span>
+        
+      <a href="http://sourceforge.net/projects/blockem" style="text-decoration:none">
+        <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=302382&amp;type=8" style="border:none;vertical-align:middle;" width="80" height="15" alt="Get blockem at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a><span class="grey">|</span>
+        
+      valid <a href="http://validator.w3.org/check?uri=referer" title="Validate XHTML">XHTML</a> <span class="grey">|</span>
+      valid <a href="http://jigsaw.w3.org/css-validator" title="Validate CSS">CSS</a>
+    </span>
+
+    <span class="floatRight">
+      <a href="index.html" title="Homepage">home</a> <span class="grey">|</span>
+      <a href="download.html" title="Download blockem">download</a> <span class="grey">|</span>
+      <a href="devel.html" title="The developers and contributors area" class="here">developers</a> <span class="grey">|</span>
+      <a href="involved.html" title="Get involved in the project">get involved</a> <span class="grey">|</span>
+      <a href="contact.html" title="Get in touch" class="last">contact</a>
+    </span>
+  </div>
+
+</div>
+
+</body>
+
+</html>

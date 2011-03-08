@@ -1,0 +1,710 @@
+<!--
+ ____________________________________________________________
+|                                                            |
+|    DESIGN + Pat Heard { http://fullahead.org }             |
+|      DATE + 2006.03.19                                     |
+| COPYRIGHT + Free use if this notice is left in place       |
+|____________________________________________________________|
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-UK">
+<head>
+
+  <title>Block'em - The GNU polyominoes board game</title>
+
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta name="author" content="Faustino Frechilla" />
+  <meta name="keywords" content="blockem board game free download gratis gnu gpl" />
+  <meta name="description" content="Blockem project homepage" />
+  <meta name="generator" content="Bluefish 1.0.7"/>
+  
+  <link rel="shortcut icon" href="images/blockemicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="css/html.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="css/layout.css" media="screen, projection, tv" />
+  <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+
+</head>
+
+<body>
+
+<!-- CONTENT: Holds all site content except for the footer.  This is what causes the footer to stick to the bottom -->
+<div id="content">
+
+  <!-- HEADER: Holds title, subtitle and header images -->
+  <div id="header">
+
+    <div id="title">
+      <h1>Block'em</h1>
+      <!-- <h2>( all )</h2> -->
+    </div>
+
+    <img src="images/bg/header_left.jpg" alt="left slice" class="left" />
+    <img src="images/bg/header_right.jpg" alt="right slice" class="right" />
+
+  </div>
+
+  <!-- MAIN MENU: Top horizontal menu of the site.  Use class="here" to turn the current page tab on -->
+  <div id="mainMenu">
+    <ul class="floatRight">
+      <li><a href="index.html" title="Homepage">Home</a></li>
+      <li><a href="download.html" title="Download blockem" class="here">Download</a></li>
+      <li><a href="devel.html" title="The developers and contributors area">Developers</a></li>
+      <li><a href="involved.html" title="Get involved in the project">Get Involved</a></li>
+      <li><a href="contact.html" title="Get in touch" class="last">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- PAGE CONTENT BEGINS: This is where you would define the columns (number, width and alignment) -->
+  <div id="page">
+
+    <!-- 25 percent width column, aligned to the left -->
+    <div class="width25 floatLeft leftColumn">
+
+      <h1>Download</h1>
+
+      <ul class="sideMenu">
+        <li class="here">
+          Contents
+          <ul>
+            <li><a href="#getblockem" title="Jump to section">Get blockem</a></li>
+            <li><a href="#help" title="Jump to section">Help</a></li>
+            <li><a href="#oldvers" title="Jump to section">Older versions</a></li>
+          </ul>
+        </li>
+        
+        <li>&nbsp;</li>
+
+        <li class="here">
+          The most popular
+          <ul>
+            <li><a href="download.html#getblockem" title="Jump to section">Download latest version</a></li>
+            <li><a href="#rules" title="Jump to section">Rules</a></li>
+            <li><a href="devel.html#compile" title="Jump to section">Compile the sources</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+
+      <p>
+        <h2>Latest news</h2>
+        <h4>27th of February, 2011</h4>      
+        New block'em website has been launched. Read more <a href="index.html#news">here</a>
+        
+        <h4>19th of January, 2011</h4>      
+        Blockem 0.3.2 has been released today! Download it from <a href="download.html#getblockem">here</a>
+      </p>
+
+    </div>
+
+    <!-- 75 percent width column, aligned to the right -->
+    <div class="width75 floatRight">
+
+      <!-- Gives the gradient block -->
+      <div class="gradient">
+
+        <a name="getblockem"></a>
+
+        <h1>Get blockem</h1>
+        <h2>It is free, and nobody can beat free</h2>
+        
+        <p>
+          Latest version of Blockem is <b>0.3.2</b>, released on the <b>19th of January, 2011</b>. Download blockem for
+          your platform picking a file from the following list
+
+          <h4>Version 0.3.2, released on the 19th of January 2011</h4>
+          <table border="1" cellpadding="3" cellspacing="3" width="90%" align="center">
+              <tr>
+                <th align="center">File</th>
+                <th align="center">Platform</th>
+                <th align="center">Languages</th>
+                <th align="center">Type</th>
+              </tr>
+              
+              <tr>
+                <td><a href="https://sourceforge.net/projects/blockem/files/0.3.2/blockem_0.3.2-2_i386.deb/download">blockem_0.3.2-2_i386.deb</a></td>
+                <td align="center"><img alt="linux" src="images/linux.png" border="0"><img alt="debian" src="images/debian.png" border="0"><img alt="ubuntu" src="images/ubuntu.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0">&nbsp;<img alt="Spanish" src="images/spains.png" border="0"></td>
+                <td>debian package</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.3.2/blockem-0.3.2-english-win32-bin.zip/download">blockem-0.3.2-english-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>zipped binary</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.3.2/blockem-0.3.2-espa_ol-win32-bin.zip/download">blockem-0.3.2-espa&ntilde;ol-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="Spanish" src="images/spains.png" border="0"></td>
+                <td>zipped binary</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.3.2/blockem-0.3.2.tar.gz/download">blockem-0.3.2.tar.gz</a></td>
+
+                <td align="center">(all)</td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0">&nbsp;<img alt="Spanish" src="images/spains.png" border="0"></td>
+                <td>sources</td>
+              </tr>
+          </table>
+        </p>
+        
+        <p></p>
+        
+        <p>
+          A few things have changed since <b>0.3.1</b>:
+
+          <ul>
+            <li>
+              Removed "parser error" messages shown at startup when blockem wrongly 
+              tries to load a .dtd file as .xml. Blockem will only try to load
+              those files located at $(game-data-folder)/blockem/challenges whose 
+              extension is ".xml"
+            </li>
+            <li>
+              4 players game added. All players MUST be humans since there is no
+              AI implemented (yet)
+            </li>
+            <li>
+              Pieces of any non-moving players can be hidden from the main view
+              through a menu option. This option can be used to get a bigger board
+              while maintaining the window size
+            </li>
+            <li>
+              Fixed error transferring starting coords settings from the "new 
+              total allocation game dialog" to the actual game engine
+            </li>
+            <li>
+              Fixed error in tar.gz package. Testing .xml files for challenge
+              processing tests had been left out of the package
+            </li>
+            <li>
+              Stripped out debug information when compiling without all the DEBUG
+              flags. Binary size has been decreased to less than 10% of the original
+              size under GNU/Linux
+            </li>
+          </ul>
+        </p>
+        
+        <p>
+          You can also have a look at the full <a href="doc/CHANGELOG">CHANGELOG</a> file, for a complete list of changes since the very beginning of the project. If you are looking for an old version jump to the <a href="#oldvers">older versions</a> section.
+        </p>
+
+        <p>
+          Have you found a <b>bug</b>? Have you thought of a <b>new feature</b> you'd love to see in block'em? Drop me an <a href="contact.html">email</a> with any comment you may have (including the negative ones). Alternatively you can file your request in <a href="http://sourceforge.net/tracker/?group_id=302382">sourceforge</a>. 
+        </p>
+
+      </div>      
+      
+      <div class="gradient">
+
+        <a name="help"></a>
+
+        <h1>Help</h1>
+        <h2>If you can, help others; if you cannot do that, at least do not harm them</h2>
+        
+        <p>
+          If you are asking for help in the download page I guess that you don't really know what to download.
+        </p>
+        
+        <h4>What file should I download?</h4>
+        <p>
+          Well, it depends on the <acronym title="Operative System">OS</acronym> you are running:
+          <ul>
+            <li>
+              <b><acronym title="Microsoft">MS</acronym> Windows</b>: You must choose among the files next to the windows logo, their names always contain  the word &quot;win32&quot;. Be aware that this application has only been run in <b>Windows XP</b>, <b>Windows Vista</b> and <b>Windows 7</b>, any other platform is still untested (it could or it couldn't work)
+              <ul>
+                <li><b>&quot;zipped binary&quot;</b> means that all binaries and dlls needed to run blockem are compressed into that .zip file. There is no need to install anything, just uncompress the file into any directory in your filesystem and double click on a file called &quot;blockem.exe&quot;.</li>
+              </ul>
+            </li>
+            <li>
+              <b>GNU/Linux</b>: If you are running a <a href="http://www.debian.org/">debian</a> based distro (Ubuntu is the most common one) you should download the <b>.deb file</b>, the one described as &quot;debian package&quot;. If you aren't, I'm afraid you will have to download the souces and compile them. Get some help about compiling the sources in the <a href="devel.html#compile_linux">developers</a> area.
+              <ul>
+                <li>I can't let go this opportunity to ask for a little of help: If you are interested in packaging blockem for your GNU/Linux platform, please <a href="contact.hmtml">let me know</a>. It is included in the big <a href="involved.html">TODO list</a> for whoever wants to get involved in this project.</li>
+              </ul>
+            </li>
+            <li>
+              <b>Mac OS X</b>: There is no native package for this OS available. You will have to download the sources and compile them. Get some help about compiling the sources in the <a href="devel.html#compile_mac">developers</a> area.
+              <ul>
+               <li>If you succeded compiling blockem for MAC OS X, please <a href="contact.hmtml">let me know</a> how. Any help to make blockem available to more people will be appreciated. Also, if you know how to do native packages to Max OS X and you want <a href="involved.html">get involved</a>, it will be appreciated too!</li>
+              </ul>
+            </li>
+            <li>
+              <b>Others</b>: Which pretty much includes every system where <a href="http://www.gtkmm.org">GTKmm</a> works. <a href="http://thewrittenword.com/">The Written Word</a> offers binary gtkmm packages for quite a few of them: SUN, IBM AIX, SGI IRIX, HP-UX, Tru64 (gcc or the platform compilers)
+              <ul>
+               <li>If you succeded compiling blockem for a platform that is not GNU/Linux or Windows, please <a href="contact.hmtml">let me know</a>. It hasn't been done yet (not that I am aware of anyway).
+              </ul>
+            </li>
+          </ul>
+        </p>
+        
+        <p>
+        </p>
+        
+        <h4>Why do Windows files have separate downloads for each language, while the rest of files seem to contain them all?</h4>
+        
+        <p>
+          If you really want to know, you should read the <b><acronym title="internationalisation">i18n</acronym></b> section in the <a href="devel.html#i18n">developers</a> area.
+        </p>
+        
+      </div>
+
+      <div class="gradient">
+
+        <a name="oldvers"></a>
+
+        <h1>Older Versions</h1>
+        <h2>No man is ever old enough to know better</h2>
+
+        <p>
+          I strongly recommend you to download the latest version from the section above: It <i>should</i> be the most stable and most complete one. But if you are still interested in the old versions, here is the list of them:
+        </p>
+        
+        <p>
+          <h4>Version 0.3.1, released on the 29th of October 2010</h4>
+          <table border="1" cellpadding="3" cellspacing="3" width="90%" align="center">
+              <tr>
+                <th align="center">File</th>
+                <th align="center">Platform</th>
+                <th align="center">Languages</th>
+                <th align="center">Type</th>
+              </tr>
+              
+              <tr>
+                <td><a href="https://sourceforge.net/projects/blockem/files/0.3.1/blockem_0.3.1-2_i386.deb/download">blockem_0.3.1-2_i386.deb</a></td>
+                <td align="center"><img alt="linux" src="images/linux.png" border="0"><img alt="debian" src="images/debian.png" border="0"><img alt="ubuntu" src="images/ubuntu.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0">&nbsp;<img alt="Spanish" src="images/spains.png" border="0"></td>
+                <td>debian package</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.3.1/blockem-0.3.1-english-win32-bin.zip/download">blockem-0.3.1-english-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>zipped binary</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.3.1/blockem-0.3.1-espa_ol-win32-bin.zip/download">blockem-0.3.1-espa&ntilde;ol-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="Spanish" src="images/spains.png" border="0"></td>
+                <td>zipped binary</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.3.1/blockem-0.3.1.tar.gz/download">blockem-0.3.1.tar.gz</a></td>
+                <td align="center">(all)</td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0">&nbsp;<img alt="Spanish" src="images/spains.png" border="0"></td>
+                <td>sources</td>
+              </tr>
+          </table>
+        </p>
+        
+        <p>
+          <h4>Version 0.3.0, released on the 16th of October 2010</h4>
+          <table border="1" cellpadding="3" cellspacing="3" width="90%" align="center">
+              <tr>
+                <th align="center">File</th>
+                <th align="center">Platform</th>
+                <th align="center">Languages</th>
+                <th align="center">Type</th>
+              </tr>
+              
+              <tr>
+                <td><a href="https://sourceforge.net/projects/blockem/files/0.3.0/blockem_0.3.0-1_i386.deb/download">blockem_0.3.0-1_i386.deb</a></td>
+                <td align="center"><img alt="linux" src="images/linux.png" border="0"><img alt="debian" src="images/debian.png" border="0"><img alt="ubuntu" src="images/ubuntu.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0">&nbsp;<img alt="Spanish" src="images/spains.png" border="0"></td>
+                <td>debian package</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.3.0/blockem-0.3.0-english-win32-bin.zip/download">blockem-0.3.0-english-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+
+                <td>zipped binary</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.3.0/blockem-0.3.0-espa_ol-win32-bin.zip/download">blockem-0.3.0-espa&ntilde;ol-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="Spanish" src="images/spains.png" border="0"></td>
+                <td>zipped binary</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.3.0/blockem-0.3.0.tar.gz/download">blockem-0.3.0.tar.gz</a></td>
+                <td align="center">(all)</td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0">&nbsp;<img alt="Spanish" src="images/spains.png" border="0"></td>
+                <td>sources</td>
+              </tr>
+          </table>
+        </p>
+        
+        <p>
+          <h4>Version 0.2.4, released on the 28th of August 2010</h4>
+          <table border="1" cellpadding="3" cellspacing="3" width="90%" align="center">
+              <tr>
+                <th align="center">File</th>
+                <th align="center">Platform</th>
+                <th align="center">Languages</th>
+                <th align="center">Type</th>
+              </tr>
+              
+              <tr>
+                <td><a href="https://sourceforge.net/projects/blockem/files/0.2.4/blockem_0.2.4-1_i386.deb/download">blockem_0.2.4-1_i386.deb</a></td>
+                <td align="center"><img alt="linux" src="images/linux.png" border="0"><img alt="debian" src="images/debian.png" border="0"><img alt="ubuntu" src="images/ubuntu.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0">&nbsp;<img alt="Spanish" src="images/spains.png" border="0"></td>
+                <td>debian package</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.2.4/blockem-0.2.4-english-win32-bin.zip/download">blockem-0.2.4-english-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>zipped binary</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.2.4/blockem-0.2.4-espa_ol-win32-bin.zip/download">blockem-0.2.4-espa&ntilde;ol-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="Spanish" src="images/spains.png" border="0"></td>
+                <td>zipped binary</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.2.4/blockem-0.2.4.tar.gz/download">blockem-0.2.4.tar.gz</a></td>
+                <td align="center">(all)</td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0">&nbsp;<img alt="Spanish" src="images/spains.png" border="0"></td>
+                <td>sources</td>
+              </tr>
+          </table>
+        </p>
+        
+        <p>
+          <h4>Version 0.2.3, released on the 19th of July 2010</h4>
+          <table border="1" cellpadding="3" cellspacing="3" width="90%" align="center">
+              <tr>
+                <th align="center">File</th>
+                <th align="center">Platform</th>
+                <th align="center">Languages</th>
+                <th align="center">Type</th>
+              </tr>
+                    
+              <tr>
+                <td><a href="https://sourceforge.net/projects/blockem/files/0.2.3/blockem_0.2.3-1_i386.deb/download">blockem_0.2.3-1_i386.deb</a></td>
+                <td align="center"><img alt="linux" src="images/linux.png" border="0"><img alt="debian" src="images/debian.png" border="0"><img alt="ubuntu" src="images/ubuntu.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>debian package</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.2.3/blockem-0.2.3-win32-bin.zip/download">blockem-0.2.3-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>zipped binary</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.2.3/blockem-0.2.3.tar.gz/download">blockem-0.2.3.tar.gz</a></td>
+                <td align="center">(all)</td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>sources</td>
+              </tr>
+          </table>
+        </p>
+        
+        <p>
+          <h4>Version 0.2.2, released on the 21st of June 2010</h4>
+          <table border="1" cellpadding="3" cellspacing="3" width="90%" align="center">
+              <tr>
+                <th align="center">File</th>
+                <th align="center">Platform</th>
+                <th align="center">Languages</th>
+                <th align="center">Type</th>
+              </tr>
+              
+              <tr>
+                <td><a href="https://sourceforge.net/projects/blockem/files/0.2.2/blockem_0.2.2-1_i386.deb/download">blockem_0.2.2-1_i386.deb</a></td>
+                <td align="center"><img alt="linux" src="images/linux.png" border="0"><img alt="debian" src="images/debian.png" border="0"><img alt="ubuntu" src="images/ubuntu.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>debian package</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.2.2/blockem-0.2.2-win32-bin.zip/download">blockem-0.2.2-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>zipped binary</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.2.2/blockem-0.2.2.tar.gz/download">blockem-0.2.2.tar.gz</a></td>
+                <td align="center">(all)</td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>sources</td>
+              </tr>
+          </table>          
+        </p>
+        
+        <p>
+          <h4>Version 0.2.1, released on the 24th of May 2010</h4>
+          <table border="1" cellpadding="3" cellspacing="3" width="90%" align="center">
+              <tr>
+                <th align="center">File</th>
+                <th align="center">Platform</th>
+                <th align="center">Languages</th>
+                <th align="center">Type</th>
+              </tr>
+              
+              <tr>
+                <td><a href="https://sourceforge.net/projects/blockem/files/0.2.1/blockem_0.2.1-1_i386.deb/download">blockem_0.2.1-1_i386.deb</a></td>
+                <td align="center"><img alt="linux" src="images/linux.png" border="0"><img alt="debian" src="images/debian.png" border="0"><img alt="ubuntu" src="images/ubuntu.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>debian package</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.2.1/blockem-0.2.1-win32-bin.zip/download">blockem-0.2.1-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>zipped binary</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.2.1/blockem-0.2.1.tar.gz/download">blockem-0.2.1.tar.gz</a></td>
+                <td align="center">(all)</td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>sources</td>
+              </tr>
+          </table>          
+        </p>
+        
+        <p>
+          <h4>Version 0.2.0, released on the 13rd of May 2010</h4>
+          <table border="1" cellpadding="3" cellspacing="3" width="90%" align="center">
+              <tr>
+                <th align="center">File</th>
+                <th align="center">Platform</th>
+                <th align="center">Languages</th>
+                <th align="center">Type</th>
+              </tr>
+              
+              <tr>
+                <td><a href="https://sourceforge.net/projects/blockem/files/0.2.0/blockem_0.2.0-4_i386.deb/download">blockem_0.2.0-4_i386.deb</a></td>
+                <td align="center"><img alt="linux" src="images/linux.png" border="0"><img alt="debian" src="images/debian.png" border="0"><img alt="ubuntu" src="images/ubuntu.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>debian package</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.2.0/blockem-0.2.0-win32-bin.zip/download">blockem-0.2.0-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>zipped binary</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.2.0/blockem-0.2.0.tar.gz/download">blockem-0.2.0.tar.gz</a></td>
+                <td align="center">(all)</td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>sources</td>
+              </tr>
+          </table>          
+        </p>
+        
+        <p>
+          <h4>Version 0.1.6, released on the 24th of April 2010</h4>
+          <table border="1" cellpadding="3" cellspacing="3" width="90%" align="center">
+              <tr>
+                <th align="center">File</th>
+                <th align="center">Platform</th>
+                <th align="center">Languages</th>
+                <th align="center">Type</th>
+              </tr>
+              
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.1.6/blockem-0.1.6-win32-bin.zip/download">blockem-0.1.6-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>zipped binary</td>
+              </tr>
+              <tr>
+              <td><a href="http://sourceforge.net/projects/blockem/files/0.1.6/blockem-0.1.6.tar.gz/download">blockem-0.1.6.tar.gz</a></td>
+                <td align="center">(all)</td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>sources</td>
+              </tr>
+          </table>          
+        </p>
+        
+        <p>
+          <h4>Version 0.1.5, released on the 16th April 2010</h4>
+          <table border="1" cellpadding="3" cellspacing="3" width="90%" align="center">
+              <tr>
+                <th align="center">File</th>
+                <th align="center">Platform</th>
+                <th align="center">Languages</th>
+                <th align="center">Type</th>
+              </tr>
+              
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.1.5/blockem-0.1.5-win32-bin.zip/download">blockem-0.1.5-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>zipped binary</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.1.5/blockem-0.1.5.tar.gz/download">blockem-0.1.5.tar.gz</a></td>
+                <td align="center">(all)</td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>sources</td>
+              </tr>
+          </table>          
+        </p>
+        
+        <p>
+          <h4>Version 0.1.4, released on the 9th of April 2010</h4>
+          <table border="1" cellpadding="3" cellspacing="3" width="90%" align="center">
+              <tr>
+                <th align="center">File</th>
+                <th align="center">Platform</th>
+                <th align="center">Languages</th>
+                <th align="center">Type</th>
+              </tr>
+              
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.1.4/blockem-0.1.4-win32-bin.zip/download">blockem-0.1.4-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>zipped binary</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.1.4/blockem-0.1.4.tar.gz/download">blockem-0.1.4.tar.gz</a></td>
+                <td align="center">(all)</td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>sources</td>
+              </tr>
+          </table>          
+        </p>
+        
+        <p>
+          <h4>Version 0.1.3, released on the 4th of April 2010</h4>
+          <table border="1" cellpadding="3" cellspacing="3" width="90%" align="center">
+              <tr>
+                <th align="center">File</th>
+                <th align="center">Platform</th>
+                <th align="center">Languages</th>
+                <th align="center">Type</th>
+              </tr>
+              
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.1.3/blockem-0.1.3-win32-bin.zip/download">blockem-0.1.3-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>zipped binary</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.1.3/blockem-0.1.3.tar.gz/download">blockem-0.1.3.tar.gz</a></td>
+                <td align="center">(all)</td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>sources</td>
+              </tr>
+          </table>          
+        </p>
+        
+        <p>
+          <h4>Version 0.1.2, released on the 26th of March 2010</h4>
+          <table border="1" cellpadding="3" cellspacing="3" width="90%" align="center">
+              <tr>
+                <th align="center">File</th>
+                <th align="center">Platform</th>
+                <th align="center">Languages</th>
+                <th align="center">Type</th>
+              </tr>
+              
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.1.2/blockem-0.1.2-win32-bin.zip/download">blockem-0.1.2-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>zipped binary</td>
+              </tr>
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.1.2/blockem-0.1.2.tar.gz/download">blockem-0.1.2.tar.gz</a></td>
+                <td align="center">(all)</td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>sources</td>
+              </tr>
+          </table>          
+        </p>
+        
+        <p>
+          <h4>Version 0.1.1, released on the 19th of March 2010</h4>
+          <table border="1" cellpadding="3" cellspacing="3" width="90%" align="center">
+              <tr>
+                <th align="center">File</th>
+                <th align="center">Platform</th>
+                <th align="center">Languages</th>
+                <th align="center">Type</th>
+              </tr>
+              
+            
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.1.1/blockem-0.1.1-win32-bin.zip/download">blockem-0.1.1-win32-bin.zip</a></td>
+                <td align="center"><img alt="windows" src="images/win.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>zipped binary</td>
+              </tr>
+
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.1.1/blockem-0.1.1-src.tar.gz/download">blockem-0.1.1.tar.gz</a></td>
+                <td align="center">(all)</td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>sources</td>
+              </tr>
+          </table>          
+        </p>
+        
+        <p>
+          <h4>Version 0.1.0, released on the 4th of February 2010</h4>
+          <table border="1" cellpadding="3" cellspacing="3" width="90%" align="center">
+              <tr>
+                <th align="center">File</th>
+                <th align="center">Platform</th>
+                <th align="center">Languages</th>
+                <th align="center">Type</th>
+              </tr>
+              
+              <tr>
+                <td><a href="http://sourceforge.net/projects/blockem/files/0.1.0/blockem-0.1.0.tar.gz/download">blockem-0.1.0.tar.gz</a></td>
+                <td align="center"><img alt="linux" src="images/linux.png" border="0"></td>
+                <td align="center"><img alt="English" src="images/unionjacks.png" border="0"></td>
+                <td>sources</td>
+              </tr>
+          </table>          
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- FOOTER: Site footer for links, copyright, etc. -->
+<div id="footer">
+
+  <div id="width">
+    <span class="floatLeft">
+      <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" style="text-decoration:none">
+        <img src="http://i.creativecommons.org/l/by/3.0/80x15.png" alt="Creative Commons License" style="border:none;vertical-align:middle;" width="80" height="15" /></a><span class="grey">|</span>
+        
+      <a href="http://sourceforge.net/projects/blockem" style="text-decoration:none">
+        <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=302382&amp;type=8" style="border:none;vertical-align:middle;" width="80" height="15" alt="Get blockem at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a><span class="grey">|</span>
+        
+      valid <a href="http://validator.w3.org/check?uri=referer" title="Validate XHTML">XHTML</a> <span class="grey">|</span>
+      valid <a href="http://jigsaw.w3.org/css-validator" title="Validate CSS">CSS</a>
+    </span>
+
+    <span class="floatRight">
+      <a href="index.html" title="Homepage">home</a> <span class="grey">|</span>
+      <a href="download.html" title="Download blockem">download</a> <span class="grey">|</span>
+      <a href="devel.html" title="The developers and contributors area" class="here">developers</a> <span class="grey">|</span>
+      <a href="involved.html" title="Get involved in the project">get involved</a> <span class="grey">|</span>
+      <a href="contact.html" title="Get in touch" class="last">contact</a>
+    </span>
+  </div>
+
+</div>
+
+</body>
+
+</html>
