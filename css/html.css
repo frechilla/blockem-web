@@ -233,6 +233,10 @@ blockquote.go {
    Images
  **************************************************************/
 
+.centeredImage {
+  text-align: center;
+}
+
 img.floatRight {
   margin: 5px 0px 10px 15px;  
 }

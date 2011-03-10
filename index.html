@@ -137,29 +137,28 @@
         <h1>The project</h1>
         <h2>But what is it good for?</h2>
         
-		<p>
-		  <b>Blockem</b> is an <a href="doc/COPYING">open source</a> clone of the board strategy game <a href="http://www.blokus.com">blokus</a>.  
-		  It is available for Unix-like systems and Windows and it is written in C++/<a href="http://www.gtkmm.org/">GTKmm</a> (the C++ wrapper of <a href="http://www.gtk.org/">GTK+</a>)
-		</p>
-        
         <p>
-          This project features:
-          <ul>
-            <li>
-              A <b>2-player mode</b> (duo game), that can be played against the computer or between two human beings.
-              Several types of <acronym title="Artificial Intelligence">AI</acronym> are available when playing against the computer, 
-              all of them based on the <b>minimax algorithm</b>.
-            </li>
-            <li>A <b>Single-player</b> (solo) game, where you allocate all the pieces on the board. Starting position and size of the board are completely customizable.</li>
-            <li>A <b>4-players mode</b>, where all players are human. Starting position and size of the board are completely customizable too.</li>
-            <li>
-              A <b>challenge</b> mode. Basically a challenge describes a <b>board</b> (size and free squares) and a player -<b>challenger</b>- (set of pieces available plus starting position). A challenge is achieved when the challenger places all his/her pieces on the board.
-            </li>
-            <li>Blockem is available in two different languages: <b>English</b> and <b>Spanish</b>. I won't let go this chance to ask for help: If you are interested in translating it into your own language please visit the <a href="involved.html">get involved</a> page to learn more.</li>
-            <li>Easily expandable mechanism to <b>add new heuristics</b> for developers. (read more about this <a href="devel.html#ai">here</a>).</li>
-            <li>Duo games can be set up between different <acronym title="Artificial Intelligence">AI</acronym>s so that it can be used to compare heuristics.</li>
-          </ul>
+          <b>Blockem</b> is an <a href="doc/COPYING">open source</a> clone of the board strategy game <a href="http://www.blokus.com">blokus</a>.  
+          It is available for Unix-like systems and Windows and it is written in C++/<a href="http://www.gtkmm.org/">GTKmm</a> (the C++ wrapper of <a href="http://www.gtk.org/">GTK+</a>).
         </p>
+        
+        <p>It basically features:</p>
+        
+        <ul>
+          <li>
+            A <b>2-player mode</b> (duo game), that can be played against the computer or between two human beings.
+            Several types of <acronym title="Artificial Intelligence">AI</acronym> are available when playing against the computer, 
+            all of them based on the <b>minimax algorithm</b>.
+          </li>
+          <li>A <b>Single-player</b> (solo) game, where you allocate all the pieces on the board. Starting position and size of the board are completely customizable.</li>
+          <li>A <b>4-players mode</b>, where all players are human. Starting position and size of the board are completely customizable too.</li>
+          <li>
+            A <b>challenge</b> mode. Basically a challenge describes a <b>board</b> (size and free squares) and a player -<b>challenger</b>- (set of pieces available plus starting position). A challenge is achieved when the challenger places all his/her pieces on the board.
+          </li>
+          <li>Blockem is available in two different languages: <b>English</b> and <b>Spanish</b>. I won't let go this chance to ask for help: If you are interested in translating it into your own language please visit the <a href="involved.html">get involved</a> page to learn more.</li>
+          <li>Easily expandable mechanism to <b>add new heuristics</b> for developers. (read more about this <a href="devel.html#ai">here</a>).</li>
+          <li>Duo games can be set up between different <acronym title="Artificial Intelligence">AI</acronym>s so that it can be used to compare heuristics.</li>
+        </ul>
 		  
         <p>
           <a href="http://stallman.org/">Richard Stallman</a> would be glad to know that <b>blockem</b> is <a href="http://www.fsf.org/">free software</a> released under GNU GPL v3.
@@ -180,11 +179,11 @@
         </p>
         
         <ol>
-          <li><span>In 1vs1 games the first piece played of each color is placed 5 squares far from one of the board's four corners. The opponent starts 5 squares far from the opposite corner.
+          <li><span>In 1vs1 games the first piece played of each color is placed 5 squares far from one of the board's four corners. The opponent starts 5 squares far from the opposite corner.</span>
             <ul>
-              <li>In 4 players games the first piece played of each color is placed in one of the board's four corners.</li>
+              <li><span>In 4 players games the first piece played of each color is placed in one of the board's four corners.</span></li>
             </ul>
-          </span></li>
+          </li>
           <li><span>Each new piece played must be placed so that it touches at least one piece of the same color, with only corner-to-corner contact allowed. (Edges cannot touch).</span></li>
           <li><span>When a player cannot place a piece, he or she passes, and play continues as normal. The game ends when no one can place a piece.</span></li>
         </ol>
@@ -193,9 +192,9 @@
           This is an example of how pieces have to be put down on the board. In this particular 4 players game, 3 of the players were able to deploy all their pieces, while the remaining one ended up with 7 pieces left (28 squares in total).
         </p>
         
-        <div align="center"><p>
+        <div class="centeredImage">
           <img src="images/example_4pgame.jpg" alt="A four players game" /> 
-        </p></div>
+        </div>
 
       </div>
       
