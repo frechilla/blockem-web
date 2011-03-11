@@ -111,34 +111,34 @@
         <h3>GNU/Linux</h3>
         
         <p>
-          Compiling blockem in a linux environment is "almost" straight away, you'll need to have the g++ compiler and the <b>gtkmm-2.4</b> and <b>libxml2</b> libraries for developers. 
-          <ul>
-            <li>libglademm-2.4 dependency was removed in <a href="doc/CHANGELOG">0.2.0</a>, so you will need that library if you are planning to compile a version of blockem older than 0.2.0. </li>
-            <li>libxml2 dependency has been added in version <a href="doc/CHANGELOG">0.3.0</a>, so if you are planning to compile an older version there is no need to install this library. </li>
-          </ul>
+          Compiling blockem in a linux environment is "almost" straight away, you'll need to have the g++ compiler and the <b>gtkmm-2.4</b> and <b>libxml2</b> libraries for developers:
         </p>
+        <ul>
+          <li>libglademm-2.4 dependency was removed in <a href="doc/CHANGELOG">0.2.0</a>, so you will need that library if you are planning to compile a version of blockem older than 0.2.0. </li>
+          <li>libxml2 dependency has been added in version <a href="doc/CHANGELOG">0.3.0</a>, so if you are planning to compile an older version there is no need to install this library. </li>
+        </ul>
 
         <p>
           All in all, the process to install these libraries differs depending on the type of linux you are using:
-          <ul>
-            <li>In <a href="http://www.debian.org/">debian</a> based systems, like <a href="http://www.ubuntu.com/">Ubuntu</a>, open a terminal and run 
-              <code>sudo apt-get install g++ libgtkmm-2.4-dev libxml2-dev</code>
-            </li>
-            <li>If your Linux is not debian-based, Google will help you to find and install those libraries. They are prety common and should be available for your platform</li>
-          </ul>
         </p>
+        <ul>
+          <li>In <a href="http://www.debian.org/">debian</a> based systems, like <a href="http://www.ubuntu.com/">Ubuntu</a>, open a terminal and run 
+            <code>sudo apt-get install g++ libgtkmm-2.4-dev libxml2-dev</code>
+          </li>
+          <li>If your Linux is not debian-based, Google will help you to find and install those libraries. They are prety common and should be available for your platform</li>
+        </ul>
         
         <p>
           Once your system has those requirements covered, it is ready to compile and install the package:
-          <ol>
-            <li>Download the latest tarball from the <a href="download.html">download</a> page</li>
-            <li>Uncompress it: <code>tar -zxf blockem-x.y.z.tar.gz</code></li>
-            <li>cd into the new directory: <code>cd blockem-x.y.z</code></li>
-            <li>Set up the compile environment and compile the sources: <code>./configure && make</code></li>
-            <li>Install it in your system <code>sudo make install</code></li>
-            <li>That's it. Blockem is now installed in your system. Open up a terminal and run<code>blockem</code></li>
-          </ol>
         </p>
+        <ol>
+          <li>Download the latest tarball from the <a href="download.html">download</a> page</li>
+          <li>Uncompress it: <code>tar -zxf blockem-x.y.z.tar.gz</code></li>
+          <li>cd into the new directory: <code>cd blockem-x.y.z</code></li>
+          <li>Set up the compile environment and compile the sources: <code>./configure && make</code></li>
+          <li>Install it in your system <code>sudo make install</code></li>
+          <li>That's it. Blockem is now installed in your system. Open up a terminal and run<code>blockem</code></li>
+        </ol>
         
         <a name="compile_win32"></a>
         <h3>Windows</h3>
@@ -147,110 +147,108 @@
           There is a precompiled binary in the <a href="download.html">download</a> page, but if you still want to compile the sources in this platform here's the HOWTO I wrote when I compiled it for the first time.
         </p>
 
-        <p>
-          <ul>
-            <li>First of all you'll need to install the MinGW environment in your windows machine. Have a look at: 
-                <a href="http://www.mingw.org/wiki/HOWTO_Install_the_MinGW_GCC_Compiler_Suite">http://www.mingw.org/wiki/HOWTO_Install_the_MinGW_GCC_Compiler_Suite</a></li>
+        <ul>
+          <li>First of all you'll need to install the MinGW environment in your windows machine. Have a look at: 
+              <a href="http://www.mingw.org/wiki/HOWTO_Install_the_MinGW_GCC_Compiler_Suite">http://www.mingw.org/wiki/HOWTO_Install_the_MinGW_GCC_Compiler_Suite</a></li>
 
-            <li>You'll also need the port of the GTKmm library for windows. Have a look at:
-                <a href="http://live.gnome.org/gtkmm/MSWindows/">http://live.gnome.org/gtkmm/MSWindows/</a></li>
+          <li>You'll also need the port of the GTKmm library for windows. Have a look at:
+              <a href="http://live.gnome.org/gtkmm/MSWindows/">http://live.gnome.org/gtkmm/MSWindows/</a></li>
 
-            <li>The following list of packages is needed for the MinGW environment:
-              <ul>
-                <li>gtkmm-win32-devel-2.16.0-4.exe</li>
-                <li>gcc-c++-4.4.0-mingw32-bin.tar.gz</li>
+          <li>The following list of packages is needed for the MinGW environment:
+            <ul>
+              <li>gtkmm-win32-devel-2.16.0-4.exe</li>
+              <li>gcc-c++-4.4.0-mingw32-bin.tar.gz</li>
 
-                <li>gcc-c++-4.4.0-mingw32-dll.tar.gz</li>
-                <li>gcc-core-4.4.0-mingw32-bin.tar.gz</li>
-                <li>gcc-core-4.4.0-mingw32-dll.tar.gz</li>
-                <li>gmp-4.2.4-mingw32-dll.tar.gz</li>
-                <li>mpfr-2.4.1-mingw32-dll.tar.gz</li>
-                <li>libiconv-1.13.1-1-mingw32-dll-2.tar.Izma</li>
+              <li>gcc-c++-4.4.0-mingw32-dll.tar.gz</li>
+              <li>gcc-core-4.4.0-mingw32-bin.tar.gz</li>
+              <li>gcc-core-4.4.0-mingw32-dll.tar.gz</li>
+              <li>gmp-4.2.4-mingw32-dll.tar.gz</li>
+              <li>mpfr-2.4.1-mingw32-dll.tar.gz</li>
+              <li>libiconv-1.13.1-1-mingw32-dll-2.tar.Izma</li>
 
-                <li>w32api-3.14-mingw32-dev.tar.gz</li>
-                <li>MSYS-1.0.11.exe</li>
-                <li>mingwrt-3.18-mingw32-dev.tar.gz</li>
-                <li>mingwrt-3.18-mingw32-dll.tar.gz</li>
-                <li>binutils-2.20.1-2-ming232-bin.tar.gz</li>
-                <li>make-3.81-20090914-mingw32-bin.tar.gz</li>
-              </ul>
-            </li>
+              <li>w32api-3.14-mingw32-dev.tar.gz</li>
+              <li>MSYS-1.0.11.exe</li>
+              <li>mingwrt-3.18-mingw32-dev.tar.gz</li>
+              <li>mingwrt-3.18-mingw32-dll.tar.gz</li>
+              <li>binutils-2.20.1-2-ming232-bin.tar.gz</li>
+              <li>make-3.81-20090914-mingw32-bin.tar.gz</li>
+            </ul>
+          </li>
 
-            <li>From version 0.2.4 blockem has support for <b>internationalization</b>, (uses gettext
-                for that matter). These are the packets you need to install in your MinGW environment ot be able to compile blockem in win32
-                with full support for <b>internationalization</b>
-              <ul>
-                <li>gettext-0.17-2-msys-1.0.13-bin.tar.lzma</li>
-                <li>gettext-0.17-2-msys-1.0.13-dev.tar.lzma</li>
-                <li>libintl-0.17-2-msys-dll-8.tar.lzma</li>
-                <li>libgettextpo-0.17-2-msys-dll-0.tar.lzma</li>
+          <li>From version 0.2.4 blockem has support for <b>internationalization</b>, (uses gettext
+              for that matter). These are the packets you need to install in your MinGW environment ot be able to compile blockem in win32
+              with full support for <b>internationalization</b>
+            <ul>
+              <li>gettext-0.17-2-msys-1.0.13-bin.tar.lzma</li>
+              <li>gettext-0.17-2-msys-1.0.13-dev.tar.lzma</li>
+              <li>libintl-0.17-2-msys-dll-8.tar.lzma</li>
+              <li>libgettextpo-0.17-2-msys-dll-0.tar.lzma</li>
 
-                <li>libtermcap-0.20050421_1-2-msys-1.0.13-dll-0.tar.lzma</li>
-                <li>libexpat-2.0.1-1-msys-1.0.13-dll-1.tar.lzma</li>
-                <li>libiconv-1.13.1-2-msys-1.0.13-dll-2.tar.lzma</li>
-              </ul>
-            </li>
+              <li>libtermcap-0.20050421_1-2-msys-1.0.13-dll-0.tar.lzma</li>
+              <li>libexpat-2.0.1-1-msys-1.0.13-dll-1.tar.lzma</li>
+              <li>libiconv-1.13.1-2-msys-1.0.13-dll-2.tar.lzma</li>
+            </ul>
+          </li>
 
-            <li>libintl is not included in the packets above because compiling the app against
-                the libintl version included in MinGW is giving errors at linking time:
+          <li>libintl is not included in the packets above because compiling the app against
+              the libintl version included in MinGW is giving errors at linking time:
                 
-                <code>main.o:main.cpp:(.text+0x191b): undefined reference to '__printf__'</code>
+              <code>main.o:main.cpp:(.text+0x191b): undefined reference to '__printf__'</code>
+              
+              To prevent this from happening you have to pass a few options to the configure
+              script to force the app to compile against the gettext library included in
+              the package. Pthreads should also be disabled since having them on produces
+              a lot of linker errors when blockem is linked against the libintl library.
+              Libintl can be built without pthread support without any problem, and blockem 
+              will still have 2 threds because they are gthreads instead of pthreads.So, 
+              to summarise, after setting up your environment correctly you will have to
+              run the configure script like this:
                 
-                To prevent this from happening you have to pass a few options to the configure
-                script to force the app to compile against the gettext library included in
-                the package. Pthreads should also be disabled since having them on produces
-                a lot of linker errors when blockem is linked against the libintl library.
-                Libintl can be built without pthread support without any problem, and blockem 
-                will still have 2 threds because they are gthreads instead of pthreads.So, 
-                to summarise, after setting up your environment correctly you will have to
-                run the configure script like this:
-                
-                <code>./configure --with-included-gettext --disable-threads</code>
-            </li>
+              <code>./configure --with-included-gettext --disable-threads</code>
+          </li>
             
-            <li>Now, once the configure script has been run, the app is ready to be compiled
-                 using the command 'make', but before you do it you've got to bear in mind
-                 localization in win32 is different from GNU Linux systems. To force blockem
-                 to be shown in a specific language (obviously, a language that blockem has 
-                 already been translated into) you just have to run from a terminal (this example 
-                 will load blockem translated into Spanish):
+          <li>Now, once the configure script has been run, the app is ready to be compiled
+               using the command 'make', but before you do it you've got to bear in mind
+               localization in win32 is different from GNU Linux systems. To force blockem
+               to be shown in a specific language (obviously, a language that blockem has 
+               already been translated into) you just have to run from a terminal (this example 
+               will load blockem translated into Spanish):
                 
-                <code>$ LANG=es_ES.UTF-8 blockem</code>
+              <code>$ LANG=es_ES.UTF-8 blockem</code>
                 
-                If no LANG variable is set when you run blockem, the app will retrieve the 
-                system's one, wich is English if your Windows system was originally installed
-                in English, or Spanish, etc.
-            </li>
+              If no LANG variable is set when you run blockem, the app will retrieve the 
+              system's one, wich is English if your Windows system was originally installed
+              in English, or Spanish, etc.
+          </li>
             
-            <li>But not everybody runs blockem from the MinGW terminal (actually, almost nobody does).
-                When an application compiled by MinGW is run by the usual double-click of your mouse,
-                <acronym title="GIMP Tool Kit">GTK</acronym> retrieves the system default language In win32, but it cannot be set
-                as easily as in Linux if you want to change the language. So a decission
-                had to be made on how blockem will be handling languages on win32 platforms.
-                Right now there is a call to <b>putenv</b> in main.cpp. It sets the LANG environment variable
-                to pick which language blockem will run with. It retrieves the value from a configuration .xml file
-                located at ${path-to-blockem-dir}/etc/blockem.conf between the tags:
+          <li>But not everybody runs blockem from the MinGW terminal (actually, almost nobody does).
+              When an application compiled by MinGW is run by the usual double-click of your mouse,
+              <acronym title="GIMP Tool Kit">GTK</acronym> retrieves the system default language In win32, but it cannot be set
+              as easily as in Linux if you want to change the language. So a decission
+              had to be made on how blockem will be handling languages on win32 platforms.
+              Right now there is a call to <b>putenv</b> in main.cpp. It sets the LANG environment variable
+              to pick which language blockem will run with. It retrieves the value from a configuration .xml file
+              located at ${path-to-blockem-dir}/etc/blockem.conf between the tags:
                 
-                <code>&lt;language&gt;&lt;&#47;language&gt;</code></li>
+              <code>&lt;language&gt;&lt;&#47;language&gt;</code></li>
                 
-                If blockem can't find that file at startup it creates a default one (in the former path) 
-                with the value &quot;en_UK&quot; and launches the application in English (localised to the UK). 
-                If you set the language to something you can't understand simply remove 
-                this config file and blockem will start up in English next time.<br/>
-            </li>            
-          </ul>
-        </p>
+              If blockem can't find that file at startup it creates a default one (in the former path) 
+              with the value &quot;en_UK&quot; and launches the application in English (localised to the UK). 
+              If you set the language to something you can't understand simply remove 
+              this config file and blockem will start up in English next time.<br/>
+          </li>            
+        </ul>
         
         <a name="compile_mac"></a>
         <h3>Mac OS X</h3>
         
         <p>
-          Nobody (that I am aware of) has ever tried to compile block'em for Max OS X. If you have an interest in compiling block'em for this platform you should satisfy its dependencies first, this is: <b>gtkmm-2.4</b> and <b>libxml2</b>
+          Nobody (that I am aware of) has ever tried to compile block'em for Max OS X. If you have an interest in compiling block'em for this platform you should satisfy its dependencies first, this is: <b>gtkmm-2.4</b> and <b>libxml2</b>.
+        </p>
           <ul>
             <li><b>gtkmm-2.4</b>: There is a a fink package to install gtkmm on MacOS X <a href="http://pdb.finkproject.org/pdb/package.php/gtkmm2.4-dev">here</a></li>
             <li><b>libxml2</b>: You can find binary versions of this library for Mac OS X <a href="http://www.explain.com.au/oss/libxml2xslt.html">here</a></li>
           </ul>
-        </p>
         
         <p>
           Once you have all the necessary dependencies installed in your system (plus the C++ compiler) block'em should compile easlily, though it hasn't been tested yet! 
@@ -262,11 +260,11 @@
         <p>
           Block'em <i>should</i> compile in every platform where <a href="http://www.gtkmm.org/">GTKmm</a> and <a href="http://xmlsoft.org/">libxml2</a> work. There are libraries for a few different systems already, but if you are extremely interested you could
           try to compile them by yourself before doing so with block'em.
-          <ul>
+        </p>
+        <ul>
           <li>You can find <b>GTKmm</b> precompiled for quite a lot of different systems and platforms <a href="http://www.gtkmm.org/en/download.html">here</a></li>
           <li>There are links to binaries for Solaris and Mac OS X <a href="http://xmlsoft.org/">here</a> (the official <b>libxml2</b> website)</li>
-          </ul>
-        </p>
+        </ul>
         
       </div>
       
@@ -277,7 +275,7 @@
         <h1>Translate block'em</h1>
         <h2>The limits of my language mean the limits of my world</h2>
         
- 	     <p>
+ 	    <p>
           Block'em uses gettext to show every sentence in different languages (you can read more about gettext <a href="http://en.wikipedia.org/wiki/GNU_gettext">here</a>). 
           Using gettext means that translating block'em is a matter of going through a set of sentences written in 
           English translating each one of them into a different language (or localise them to your region, English from New Zealand for instance)
@@ -285,11 +283,11 @@
         
         <p>
           Block'em is available in the following languages so far:
-          <ul>
-            <li>English (UK)</li>
-            <li>Spanish (Spain)</li>
-          </ul>          
         </p>
+        <ul>
+          <li>English (UK)</li>
+          <li>Spanish (Spain)</li>
+        </ul>
         
         <p>
           If you wish to translate block'em into a different language, please <a href="contact.html">contact me</a>. I will send you
@@ -356,26 +354,25 @@
         <p>
           To understand the Artifical intelligence (AI) used in Blockem, a few terms must
           be understood first:
-          <ul>
-            <li>
-              Game tree (from <a href="http://en.wikipedia.org/wiki/Game_tree">wikipedia</a>) is a directed graph whose nodes are positions in a 
-              game and whose edges are moves. The complete game tree for a game is the game 
-              tree starting at the initial position and containing all possible moves from 
-              each position.
-            </li>
-            <li>
-              Minimax (from <a href="http://en.wikipedia.org/wiki/Minimax">wikipedia</a>) is a decision rule used in game theory (...) for 
-              minimising the possible loss while maximising the potential gain
-            </li>
-            <li>
-              Alpha-beta prunning (from <a href="http://en.wikipedia.org/wiki/Alpha-beta_pruning">wikipedia</a>) It is a search with adversary algorithm
-              used commonly for machine playing of two-player games (Tic-tac-toe, Chess, 
-              Go, etc.). It seeks to reduce the number of nodes that are evaluated in the 
-              search tree by the minimax algorithm
-            </li>
-          </ul>
-      </p>
-
+        </p>
+        <ul>
+          <li>
+            Game tree (from <a href="http://en.wikipedia.org/wiki/Game_tree">wikipedia</a>) is a directed graph whose nodes are positions in a 
+            game and whose edges are moves. The complete game tree for a game is the game 
+            tree starting at the initial position and containing all possible moves from 
+            each position.
+          </li>
+          <li>
+            Minimax (from <a href="http://en.wikipedia.org/wiki/Minimax">wikipedia</a>) is a decision rule used in game theory (...) for 
+            minimising the possible loss while maximising the potential gain
+          </li>
+          <li>
+            Alpha-beta prunning (from <a href="http://en.wikipedia.org/wiki/Alpha-beta_pruning">wikipedia</a>) It is a search with adversary algorithm
+            used commonly for machine playing of two-player games (Tic-tac-toe, Chess, 
+            Go, etc.). It seeks to reduce the number of nodes that are evaluated in the 
+            search tree by the minimax algorithm
+          </li>
+        </ul>
 
       <p>
         As you could have guessed, Blockem <acronym title="Artificial Intelligence">AI</acronym> is based on the 
