@@ -135,7 +135,7 @@
           <li>Download the latest tarball from the <a href="download.html">download</a> page</li>
           <li>Uncompress it: <code>tar -zxf blockem-x.y.z.tar.gz</code></li>
           <li>cd into the new directory: <code>cd blockem-x.y.z</code></li>
-          <li>Set up the compile environment and compile the sources: <code>./configure && make</code></li>
+          <li>Set up the compile environment and compile the sources: <code>./configure &amp;&amp; make</code></li>
           <li>Install it in your system <code>sudo make install</code></li>
           <li>That's it. Blockem is now installed in your system. Open up a terminal and run<code>blockem</code></li>
         </ol>
@@ -230,12 +230,12 @@
               to pick which language blockem will run with. It retrieves the value from a configuration .xml file
               located at ${path-to-blockem-dir}/etc/blockem.conf between the tags:
                 
-              <code>&lt;language&gt;&lt;&#47;language&gt;</code></li>
+              <code>&lt;language&gt;&lt;&#47;language&gt;</code>
                 
               If blockem can't find that file at startup it creates a default one (in the former path) 
               with the value &quot;en_UK&quot; and launches the application in English (localised to the UK). 
               If you set the language to something you can't understand simply remove 
-              this config file and blockem will start up in English next time.<br/>
+              this config file and blockem will start up in English next time.
           </li>            
         </ul>
         
@@ -390,9 +390,9 @@
 
         <code>
 int32_t EvalFunction(
-        const Board  &a_board,
-        const Player &a_playerMe,
-        const Player &a_playerOpponent);
+        const Board  &amp;a_board,
+        const Player &amp;a_playerMe,
+        const Player &amp;a_playerOpponent);
         </code>
       </p>
 
@@ -404,7 +404,7 @@ class Heuristic
 {
     /* ... */
     typedef int32_t (*EvalFunction_t)
-            (const Board &, const Player &, const Player &);
+            (const Board &amp;, const Player &amp;, const Player &amp;);
 
     /* ... */
 };
@@ -423,20 +423,20 @@ class Heuristic
           be based on the number of squares each player managed to allocate on the board:
 <code>
 int32_t SimpleEvalFunction(
-    const Board &a_board,
-    const Player &a_playerMe,
-    const Player &a_playerOpponent)
+    const Board &amp;a_board,
+    const Player &amp;a_playerMe,
+    const Player &amp;a_playerOpponent)
 {
     int32_t squaresMe = 0;
     int32_t squaresOpponent = 0;
     int32_t rv = 0;
 
     for (uint8_t rowCount = 0; 
-                 rowCount < a_board.GetNRows(); 
+                 rowCount &lt; a_board.GetNRows(); 
                  rowCount++)
     {
         for (uint8_t columnCount = 0;
-                     columnCount < a_board.GetNColumns();
+                     columnCount &lt; a_board.GetNColumns();
                      columnCount++)
         {
             if (a_board.IsPlayerInCoord(rowCount, columnCount, a_playerMe))
@@ -466,20 +466,20 @@ int32_t SimpleEvalFunction(
 
 <code>
 int32_t SimpleEvalFunction(
-    const Board &a_board,
-    const Player &a_playerMe,
-    const Player &a_playerOpponent)
+    const Board &amp;a_board,
+    const Player &amp;a_playerMe,
+    const Player &amp;a_playerOpponent)
 {
     int32_t squaresMe = 0;
     int32_t squaresOpponent = 0;
     int32_t rv = 0;
 
     for (uint8_t rowCount = 0; 
-                 rowCount < a_board.GetNRows() ; 
+                 rowCount &lt; a_board.GetNRows() ; 
                  rowCount++)
     {
         for (uint8_t columnCount = 0;
-                     columnCount < a_board.GetNColumns();
+                     columnCount &lt; a_board.GetNColumns();
                      columnCount++)
         {
             if (a_board.IsPlayerInCoord(rowCount, columnCount, a_playerMe))
@@ -507,7 +507,7 @@ int32_t SimpleEvalFunction(
           This array is defined in heuristic.h as:
 <code>
     /// pointer to the heuristic calculator function
-    typedef int32_t (*EvalFunction_t)(const Board &, const Player &, const Player &);
+    typedef int32_t (*EvalFunction_t)(const Board &amp;, const Player &amp;, const Player &amp;);
 
     /// types of heuristic. If you add a heuristic here you MUST add a proper description
     /// to Game1v1Config in the constructor using a Game1v1Config::sHeuristicConfig_t
@@ -591,7 +591,7 @@ const Heuristic::sHeuristicData_t Heuristic::m_heuristicData[e_heuristicCount] =
         e_heuristicInfluenceArea = e_heuristicStartCount,
         /* ... */
         e_heuristicRandom,
-        e_heuristicMyCustomisedHeuristic, // <-- Your brand new heuristic
+        e_heuristicMyCustomisedHeuristic, // &lt;-- Your brand new heuristic
 
         e_heuristicCount, // stores the amount of heuristics. Must be always at the end
     } eHeuristicType_t;
